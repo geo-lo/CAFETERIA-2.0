@@ -110,5 +110,43 @@ namespace Proyecto_PED_CAFETERIA.Clases
 
             return conteo > 0;
         }
+
+        //funcion para editar un producto por su ID, retorna true si se editó correctamente, false si no se encontró el ID
+        public bool EditarProducto(int id, string nombre, int cantidad, int stockMin, decimal precio)
+
+        { 
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                comando.Connection = AbrirConexion();
+
+                // La consulta usa WHERE IdProducto para no modificar toda la tabla por error
+                comando.CommandText = @"UPDATE Inventario 
+                                SET NombreProducto = @nombre, 
+                                    CantidadActual = @cantidad, 
+                                    StockMinimo = @stockMin, 
+                                    PrecioUnitario = @precio, 
+                                    UltimaActualizacion = GETDATE() 
+                                WHERE IdProducto = @id";
+
+                // Pasamos los parámetros
+                comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                comando.Parameters.AddWithValue("@cantidad", cantidad);
+                comando.Parameters.AddWithValue("@stockMin", stockMin);
+                comando.Parameters.AddWithValue("@precio", precio);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+                CerrarConexion();
+
+                // Retorna true si encontró el ID y lo modificó
+                return filasAfectadas > 0;
+            }
+            catch (Exception ex)
+            {
+                CerrarConexion();
+                throw new Exception("Error al editar el producto: " + ex.Message);
+            }
+        }
     }
 }

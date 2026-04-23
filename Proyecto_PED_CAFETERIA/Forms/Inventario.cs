@@ -195,5 +195,32 @@ namespace Proyecto_PED_CAFETERIA.Forms
             repo.EliminarProducto(id);
             RefrescarInventario();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ConsultasDB repo = new ConsultasDB();
+            if (txtNombre.Text == "" || txtPrecio.Text == "" || txtCantidad.Text == "")
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+            try
+            {
+                int cantidad = int.Parse(txtCantidad.Text);
+                double precio = double.Parse(txtPrecio.Text);
+                if (precio < 0 || cantidad < 0)
+                {
+                    MessageBox.Show("Por favor, ingrese valores positivos para cantidad y precio.");
+                    return;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Por favor, ingrese un valor numérico válido para cantidad y precio.");
+                return;
+            }
+            repo.EditarProducto(int.Parse(txtId.Text), txtNombre.Text, int.Parse(txtCantidad.Text), 0, decimal.Parse(txtPrecio.Text));
+            RefrescarInventario() ; 
+        }
     }
 }
