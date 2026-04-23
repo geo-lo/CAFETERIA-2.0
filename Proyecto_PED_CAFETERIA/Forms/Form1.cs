@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_PED_CAFETERIA.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,13 @@ namespace Proyecto_PED_CAFETERIA
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmVistaUsuario regresar = new FrmVistaUsuario();
+            this.Hide();
+            regresar.Show();
         }
     }
 }

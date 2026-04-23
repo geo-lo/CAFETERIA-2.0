@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -43,11 +44,10 @@
             this.panelFill = new System.Windows.Forms.Panel();
             this.Bienvenida = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLateral
@@ -65,10 +65,20 @@
             this.panelLateral.Controls.Add(this.label1);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
-            this.panelLateral.Margin = new System.Windows.Forms.Padding(4);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(203, 590);
+            this.panelLateral.Size = new System.Drawing.Size(152, 479);
             this.panelLateral.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.Logo_empresa_cafetería_divertida_ilustrada__2_2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 124);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // button8
             // 
@@ -77,10 +87,9 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 337);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Location = new System.Drawing.Point(0, 274);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(203, 28);
+            this.button8.Size = new System.Drawing.Size(152, 23);
             this.button8.TabIndex = 7;
             this.button8.Text = "Proveedores";
             this.button8.UseVisualStyleBackColor = true;
@@ -93,10 +102,9 @@
             this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfil.ForeColor = System.Drawing.Color.White;
-            this.btnPerfil.Location = new System.Drawing.Point(0, 488);
-            this.btnPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPerfil.Location = new System.Drawing.Point(0, 397);
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(203, 51);
+            this.btnPerfil.Size = new System.Drawing.Size(152, 41);
             this.btnPerfil.TabIndex = 6;
             this.btnPerfil.Text = "Perfil";
             this.btnPerfil.UseVisualStyleBackColor = true;
@@ -109,12 +117,11 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(0, 539);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(0, 438);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(203, 51);
+            this.btnSalir.Size = new System.Drawing.Size(152, 41);
             this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Regresar";
+            this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -125,10 +132,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 302);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(0, 245);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(203, 28);
+            this.button5.Size = new System.Drawing.Size(152, 23);
             this.button5.TabIndex = 4;
             this.button5.Text = "Inventario";
             this.button5.UseVisualStyleBackColor = true;
@@ -141,10 +147,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 266);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(0, 216);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(203, 28);
+            this.button4.Size = new System.Drawing.Size(152, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Historial";
             this.button4.UseVisualStyleBackColor = true;
@@ -157,10 +162,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 230);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(0, 187);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(203, 28);
+            this.button3.Size = new System.Drawing.Size(152, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Preparar";
             this.button3.UseVisualStyleBackColor = true;
@@ -173,10 +177,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 194);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(0, 158);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 28);
+            this.button2.Size = new System.Drawing.Size(152, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Pedidos";
             this.button2.UseVisualStyleBackColor = true;
@@ -189,10 +192,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 159);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(0, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 28);
+            this.button1.Size = new System.Drawing.Size(152, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Inicio";
             this.button1.UseVisualStyleBackColor = true;
@@ -204,10 +206,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(-5, 86);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(-4, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 29);
+            this.label1.Size = new System.Drawing.Size(153, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "_____________";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -223,10 +224,9 @@
             this.panelFill.Controls.Add(this.Bienvenida);
             this.panelFill.Controls.Add(this.pictureBox2);
             this.panelFill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFill.Location = new System.Drawing.Point(203, 0);
-            this.panelFill.Margin = new System.Windows.Forms.Padding(4);
+            this.panelFill.Location = new System.Drawing.Point(152, 0);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(982, 590);
+            this.panelFill.Size = new System.Drawing.Size(737, 479);
             this.panelFill.TabIndex = 2;
             this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
             // 
@@ -235,9 +235,10 @@
             this.Bienvenida.BackColor = System.Drawing.Color.Transparent;
             this.Bienvenida.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bienvenida.ForeColor = System.Drawing.Color.Sienna;
-            this.Bienvenida.Location = new System.Drawing.Point(41, 415);
+            this.Bienvenida.Location = new System.Drawing.Point(31, 337);
+            this.Bienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Bienvenida.Name = "Bienvenida";
-            this.Bienvenida.Size = new System.Drawing.Size(595, 64);
+            this.Bienvenida.Size = new System.Drawing.Size(446, 52);
             this.Bienvenida.TabIndex = 7;
             this.Bienvenida.Text = "\"\"";
             // 
@@ -247,41 +248,29 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.dylce_aroma_cafe_iniciooo1;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(982, 590);
+            this.pictureBox2.Size = new System.Drawing.Size(736, 479);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.Logo_empresa_cafetería_divertida_ilustrada__2_2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmVistaUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 590);
+            this.ClientSize = new System.Drawing.Size(889, 479);
             this.Controls.Add(this.panelFill);
             this.Controls.Add(this.panelLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmVistaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVistaAdmin";
             this.Load += new System.EventHandler(this.FrmVistaUsuario_Load);
             this.panelLateral.ResumeLayout(false);
             this.panelLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

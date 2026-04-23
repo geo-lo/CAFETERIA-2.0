@@ -69,7 +69,22 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            
+            DialogResult admin = MessageBox.Show(
+             "Desea entrar al MODO ADMINISTRADOR?",
+              "Confirmacion",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+             );
+
+            if (admin == DialogResult.Yes)
+            {
+                this.Hide();
+
+                frmLogin login = new frmLogin();
+                login.ShowDialog();
+
+                this.Show();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
