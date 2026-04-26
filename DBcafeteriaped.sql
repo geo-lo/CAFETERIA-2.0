@@ -7,38 +7,30 @@ GO
 USE CafeteriaDB;
 GO
 
---Creamos las tablas necesarias para guardar los datos
-
---Tabla para almacenar los productos disponibles en la cafetería
-CREATE TABLE Inventario (
+--INVENTARIO
+GO
+CREATE TABLE Inventario(
 IdProducto INT PRIMARY KEY IDENTITY(1,1),
-NombreProducto	NVARCHAR(100) NOT NULL,
+NombreProducto VARCHAR(100) NOT NULL,
 CantidadActual INT NOT NULL DEFAULT 0,
-StockMinimo INT NOT NULL DEFAULT 5, --Alerta cuando queden pocos productos
+StockMinimo INT NOT NULL DEFAULT 5,
 PrecioUnitario DECIMAL(10,2) NOT NULL,
 UltimaActualizacion DATETIME DEFAULT GETDATE()
-);   
-GO
+);
 
---Tabla para almacenar los pedidos realizados por los clientes
-CREATE TABLE Pedidos (
-IdPedido INT PRIMARY KEY IDENTITY(1,1),
-FechaRegisto DATETIME DEFAULT GETDATE(),
-Estado NVARCHAR(50) NOT NULL DEFAULT 'Pendiente', --Pendiente, Completado
-TotalPedido DECIMAL(10,2) NOT NULL DEFAULT 0.00
+--HISTORIAL DE VENTAS
+CREATE TABLE HistoriaVentas(
+IdRegistro INT PRIMARY KEY IDENTITY (1,1),
+IdProducto INT,
+NombreProducto VARCHAR(100),
+CantidadVendida INT NOT NULL,
+PrecioVenta DECIMAL(10,2) NOT NULL,
+TotalVenta AS (CantidadVendida * PrecioVenta),
+FechaVenta DATETIME DEFAULT GETDATE(),
+
+CONSTRAINT FK_Inventario_Ventas FOREIGN KEY (IdProducto)REFERENCES Inventario(IdProducto)
 );
 GO
-
---Tabla que conecta los pedidos con los productos de inventario, permitiendo registrar qué productos se han pedido y en qué cantidad
-CREATE TABLE DetallesPedido (
-IdDetalle INT PRIMARY KEY IDENTITY(1,1),
-IdPedido INT FOREIGN KEY REFERENCES Pedidos(IdPedido),
-IdProducto INT FOREIGN KEY REFERENCES Inventario(IdProducto),
-Cantidad INT NOT NULL
-);
-GO
-
---Falta tabla para llevar control de ventas
 
 
 --TRIGGERS
