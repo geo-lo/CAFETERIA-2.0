@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CAFETERIA.ClasesNuevas;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,14 +32,14 @@ namespace Proyecto_PED_CAFETERIA.Clases
         }
 
         //Insertar datos (Insert) en la tabla Inventario
-        public void Insertar(string nombre, int cantidad, double precio )
+        public void Insertar(string nombre, int cantidad, double precio)
 
         {
             if (ExisteProducto(nombre))
             {
                 MessageBox.Show("El producto ya existe en el inventario.");
                 // Si existe, salimos de la función devolviendo 'false'
-                return ;
+                return;
             }
 
             SqlCommand comando = new SqlCommand();
@@ -46,7 +48,7 @@ namespace Proyecto_PED_CAFETERIA.Clases
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@cantidad", cantidad);
             comando.Parameters.AddWithValue("@precio", precio);
-            
+
             comando.ExecuteNonQuery();
             CerrarConexion();
         }
@@ -62,7 +64,7 @@ namespace Proyecto_PED_CAFETERIA.Clases
             comando.Parameters.AddWithValue("@precio", precio);
 
             comando.ExecuteNonQuery();
-            CerrarConexion() ;
+            CerrarConexion();
         }
 
         //Eliminar datos (Delete) de la tabla Inventario
@@ -114,7 +116,7 @@ namespace Proyecto_PED_CAFETERIA.Clases
         //funcion para editar un producto por su ID, retorna true si se editó correctamente, false si no se encontró el ID
         public bool EditarProducto(int id, string nombre, int cantidad, int stockMin, decimal precio)
 
-        { 
+        {
             SqlCommand comando = new SqlCommand();
             try
             {
@@ -146,6 +148,54 @@ namespace Proyecto_PED_CAFETERIA.Clases
             {
                 CerrarConexion();
                 throw new Exception("Error al editar el producto: " + ex.Message);
+            }
+        }
+        //Registra las ventas en la base de datos
+        public bool RegistrarVenta(int idProducto, string nombre, int cantidad, decimal precio)
+        {
+            using (SqlConnection conexion = AbrirConexion())
+            {
+                // Iniciamos una transacción para asegurar que ambos pasos se cumplan
+                SqlTransaction transaccion = conexion.BeginTransaction();
+
+                try
+                {
+                    // PASO 1: Insertar en HistorialVentas
+                    string queryHistorial = @"INSERT INTO HistorialVentas (IdProducto, NombreProducto, CantidadVendida, PrecioVenta) 
+                                     VALUES (@id, @nombre, @cantidad, @precio)";
+
+                    SqlCommand cmdHistorial = new SqlCommand(queryHistorial, conexion, transaccion);
+                    cmdHistorial.Parameters.AddWithValue("@id", idProducto);
+                    cmdHistorial.Parameters.AddWithValue("@nombre", nombre);
+                    cmdHistorial.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmdHistorial.Parameters.AddWithValue("@precio", precio);
+                    cmdHistorial.ExecuteNonQuery();
+
+                    // PASO 2: Descontar del Inventario
+                    string queryInventario = @"UPDATE Inventario 
+                                      SET CantidadActual = CantidadActual - @cantidad, 
+                                          UltimaActualizacion = GETDATE() 
+                                      WHERE IdProducto = @id";
+
+                    SqlCommand cmdInventario = new SqlCommand(queryInventario, conexion, transaccion);
+                    cmdInventario.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmdInventario.Parameters.AddWithValue("@id", idProducto);
+                    cmdInventario.ExecuteNonQuery();
+
+                    // Si ambos pasos fueron exitosos, confirmamos los cambios en la DB
+                    transaccion.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    // Si algo falla, deshacemos todo para no dejar datos corruptos
+                    transaccion.Rollback();
+                    throw new Exception("Error al procesar la venta: " + ex.Message);
+                }
+                finally
+                {
+                    CerrarConexion();
+                }
             }
         }
     }

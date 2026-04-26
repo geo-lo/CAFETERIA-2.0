@@ -1,4 +1,5 @@
-﻿using Proyecto_PED_CAFETERIA.Clases;
+﻿using CAFETERIA.ClasesNuevas;
+using Proyecto_PED_CAFETERIA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -166,6 +167,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             }
 
             repo.Insertar(txtNombre.Text, int.Parse(txtCantidad.Text), double.Parse(txtPrecio.Text));
+            repo.RegistrarVenta(0, txtNombre.Text, int.Parse(txtCantidad.Text), decimal.Parse(txtPrecio.Text));
             RefrescarInventario();
         }
 
