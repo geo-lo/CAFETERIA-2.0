@@ -18,12 +18,13 @@ namespace CAFETERIA.ClasesNuevas
         public Button Boton { get; set; }
         public string Categoria { get; set; }
         public Image Imagen { get; set; }
+        public string Descripcion { get; set; }
 
         public double Total
         {
             get { return Cantidad * Precio; }
         }
-        public Producto(string nombreProducto, int cantidad, double precio,Button boton, string categoria,Image imagen)
+        public Producto(string nombreProducto, int cantidad, double precio,Button boton, string categoria,Image imagen,string descripcion)
         {
             NombreProducto = nombreProducto;
             Cantidad = cantidad;
@@ -31,6 +32,7 @@ namespace CAFETERIA.ClasesNuevas
             Boton = boton;
             Categoria = categoria;
             Imagen = imagen;
+            Descripcion = descripcion;
         }
     }
 }

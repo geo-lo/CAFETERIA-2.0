@@ -19,6 +19,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
         double precioProducto;
         Image imagenProducto;
         string DescripcionProducto;
+        string categoriaProducto;
 
         public frmCantidad()
         {
@@ -27,13 +28,15 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         // Constructor del formulario de cantidad que recibe el nombre del producto,
         // su precio, la imagen y la descripción
-        public frmCantidad(string nombre, double precio, Image imagen, string descripcionProducto)
+        public frmCantidad(string nombre, double precio, Image imagen, string descripcionProducto,string categoria)
         {
             InitializeComponent();
             nombreProducto = nombre;
             precioProducto = precio;
             imagenProducto = imagen;
+            categoriaProducto = categoria;
             DescripcionProducto = descripcionProducto;
+
         }
 
         // Al cargar el formulario de cantidad, se muestra la imagen del producto,
@@ -146,7 +149,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             }
 
             int cantidad = (int)numericUpDown1.Value;
-            Producto prod = new Producto(nombreProducto, cantidad, precioProducto, btnAceptar, "Categoria", imagenProducto);
+            Producto prod = new Producto(nombreProducto, cantidad, precioProducto, btnAceptar, "Categoria", imagenProducto,"Descripcion");
 
             ClaseGlobal.listaTemporal.AgregarProducto(prod);
 
