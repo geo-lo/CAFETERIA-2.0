@@ -650,5 +650,8 @@
   <ItemGroup>
     <None Include="Resources\Documento A4 Catálogo Supermercado Moderno Blanco %2850%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Presentación Historia del Café Ilustrado Café y Beige4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

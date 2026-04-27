@@ -1493,6 +1493,16 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige4 {
+            get {
+                object obj = ResourceManager.GetObject("Presentación Historia del Café Ilustrado Café y Beige4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap sandwich {
             get {
                 object obj = ResourceManager.GetObject("sandwich", resourceCulture);
