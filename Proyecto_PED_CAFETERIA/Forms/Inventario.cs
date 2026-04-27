@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,38 +142,24 @@ namespace Proyecto_PED_CAFETERIA.Forms
         // Acciones del boton agregar
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            ConsultasDB repo = new ConsultasDB();
-
-            if (txtNombre.Text == "" || txtCantidad.Text == "" || txtPrecio.Text == "")
+            btn = true; // Indica que se abrirá el formulario para agregar un nuevo producto
+            if (modificar == null || modificar.IsDisposed)
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return;
+                modificar = new frmModificarProducto();
+                modificar.Show();
+                modificar.refrescar += RefrescarInventario; // Suscribirse al evento de refrescar
             }
-
-            try
+            else
             {
-                int cantidad = int.Parse(txtCantidad.Text);
-                double precio = double.Parse(txtPrecio.Text);
-
-                if (precio < 0 || cantidad < 0)
-                {
-                    MessageBox.Show("Por favor, ingrese valores positivos para cantidad y precio.");
-                    return;
-                }
+                modificar.BringToFront();
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("Por favor, ingrese un valor numérico válido para cantidad y precio.");
-                return;
-            }
-
-            repo.Insertar(txtNombre.Text, int.Parse(txtCantidad.Text), double.Parse(txtPrecio.Text));
-            repo.RegistrarVenta(0, txtNombre.Text, int.Parse(txtCantidad.Text), decimal.Parse(txtPrecio.Text));
-            RefrescarInventario();
+            
+            
+            
         }
 
         // funcion para refrescar el datagridview con los datos de la tabla Inventario
-        private void RefrescarInventario()
+        public void RefrescarInventario()
         {
             ConsultasDB repo = new ConsultasDB();
             dgvInventario.DataSource = repo.MostrarInventario();
@@ -180,6 +167,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            
             ConsultasDB repo = new ConsultasDB();
 
             if (int.TryParse(txtId.Text, out int id) == false)
@@ -196,33 +184,47 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
             repo.EliminarProducto(id);
             RefrescarInventario();
+     
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ConsultasDB repo = new ConsultasDB();
-            if (txtNombre.Text == "" || txtPrecio.Text == "" || txtCantidad.Text == "")
+            if (string.IsNullOrWhiteSpace(txtId.Text))
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
+                MessageBox.Show("Digite un ID.");
                 return;
             }
-            try
+
+            // Validación extra: Verificar si existe antes de abrir el form de edición
+            ConsultasDB repo = new ConsultasDB();
+            if (int.TryParse(txtId.Text, out int id))
             {
-                int cantidad = int.Parse(txtCantidad.Text);
-                double precio = double.Parse(txtPrecio.Text);
-                if (precio < 0 || cantidad < 0)
+                DataTable info = repo.BuscarPorId(id);
+                if (info.Rows.Count == 0)
                 {
-                    MessageBox.Show("Por favor, ingrese valores positivos para cantidad y precio.");
-                    return;
+                    MessageBox.Show("El ID digitado no existe en el sistema.");
+                    return; // Bloqueamos la apertura del formulario
                 }
             }
-            catch (FormatException)
+
+            // Si pasó la validación, abrimos el form como ya sabías
+            if (modificar == null || modificar.IsDisposed)
             {
-                MessageBox.Show("Por favor, ingrese un valor numérico válido para cantidad y precio.");
-                return;
+                modificar = new frmModificarProducto();
+                modificar.idRecibido = txtId.Text;
+                modificar.refrescar += RefrescarInventario;
+                modificar.Show();
             }
-            repo.EditarProducto(int.Parse(txtId.Text), txtNombre.Text, int.Parse(txtCantidad.Text), 0, decimal.Parse(txtPrecio.Text));
-            RefrescarInventario() ; 
+            else
+            {
+                modificar.idRecibido = txtId.Text;
+                modificar.BringToFront();
+            }
+
         }
+
+        frmModificarProducto modificar = null; //variable para controlar si ya existe el frm de modificar producto abierto
+        public bool btn; // Agregar= True, Modificar= False sirve para verificar si el formulario de modificar producto se abrió para agregar un nuevo producto o para modificar uno existente
     }
+    
 }

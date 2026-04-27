@@ -53,19 +53,6 @@ namespace Proyecto_PED_CAFETERIA.Clases
             CerrarConexion();
         }
 
-        //Actualizar datos (Update) en la tabla Inventario
-        public void EditarProducto(string nombre, int cantidad, double precio)
-        {
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = AbrirConexion();
-
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@cantidad", cantidad);
-            comando.Parameters.AddWithValue("@precio", precio);
-
-            comando.ExecuteNonQuery();
-            CerrarConexion();
-        }
 
         //Eliminar datos (Delete) de la tabla Inventario
         public void EliminarProducto(int id)
@@ -151,7 +138,7 @@ namespace Proyecto_PED_CAFETERIA.Clases
             }
         }
         //Registra las ventas en la base de datos
-        public bool RegistrarVenta(int idProducto, string nombre, int cantidad, decimal precio)
+        /*public bool RegistrarVenta(int idProducto, string nombre, int cantidad, decimal precio)
         {
             using (SqlConnection conexion = AbrirConexion())
             {
@@ -197,6 +184,6 @@ namespace Proyecto_PED_CAFETERIA.Clases
                     CerrarConexion();
                 }
             }
-        }
+        }*/
     }
 }
