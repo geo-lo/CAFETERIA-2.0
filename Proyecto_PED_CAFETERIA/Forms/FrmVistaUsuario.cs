@@ -198,5 +198,10 @@ namespace Proyecto_PED_CAFETERIA.Forms
         {
             AbrirForms(new Proveedores());
         }
+
+        private void panelLateral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

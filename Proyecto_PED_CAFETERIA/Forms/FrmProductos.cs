@@ -87,6 +87,8 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
                 Button btn = new Button();
                 btn.Text = p.NombreProducto;
+                btn.BackgroundImage = p.Imagen;
+                btn.BackgroundImageLayout = ImageLayout.Zoom;
                 btn.Size = new Size(anchoBtn, altoBtn);
 
                 int fila = i / columnas;
@@ -122,15 +124,21 @@ namespace Proyecto_PED_CAFETERIA.Forms
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             //crea botones dinamicos con los productos de la lista
-            lista.AgregarProducto(new Producto("Galletas de Chocolate", 1, 1.00, null, "Comidas", null,"DESCRIPCION"));
-            lista.AgregarProducto(new Producto("Pastel de Fruta", 1, 1.50, null, "Comidas", null,"Pastel fresco de frutas"));
-            lista.AgregarProducto(new Producto("Croissant", 1, 1.75, null, "Comidas", null,"Croissant mantecoso y crujiente"));
-            lista.AgregarProducto(new Producto("CupCake", 1, 1.75, null, "Comidas", null,"Cupcake esponjoso con crema"));
-            lista.AgregarProducto(new Producto("Sandwich", 1, 1.25, null, "Comidas", null,"Sandwich con ingredientes frescos"));
-            lista.AgregarProducto(new Producto("Pancake", 1, 2.00, null, "Comidas", null,"Pancake esponjoso con jarabe"));
-            lista.AgregarProducto(new Producto("Dona Glaseada", 1, 1.25, null, "Comidas", null,"Dona glaseada y suave"));
-            lista.AgregarProducto(new Producto("random", 1, 1.50, null, "Comidas", null,"Descripción del producto random"));
-            lista.AgregarProducto(new Producto("random2", 1, 1.50, null, "Comidas", null,"Descripción del producto random2"));
+
+            //asi como lo hice con estos botones tienes que hacerlo con los demas,
+            //hasta la linea 169 porfa cuando termines borrame el mensaje de arriba,
+            //solo deja el mensaje de "Crear botones"
+            //luego necesito que le des estilo al form de: Form1.cs, FrmSalida, FrmCliente, frmProveedores (Solo agrega botones con diferentes marcas) y los que faltan
+            //Si ves algo que no tiene funcion no le metas mano si, plis esos que no tienen funcion van con la base de datos, de eso se ocupa cris
+            lista.AgregarProducto(new Producto("", 1, 1.00, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__1_,"DESCRIPCION"));
+            lista.AgregarProducto(new Producto("Pastel de Fruta", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_,"Pastel fresco de frutas"));
+            lista.AgregarProducto(new Producto("Croissant", 1, 1.75, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__4_,"Croissant mantecoso y crujiente"));
+            lista.AgregarProducto(new Producto("CupCake", 1, 1.75, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__5_,"Cupcake esponjoso con crema"));
+            lista.AgregarProducto(new Producto("Sandwich", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__6_,"Sandwich con ingredientes frescos"));
+            lista.AgregarProducto(new Producto("Pancake", 1, 2.00, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__7_,"Pancake esponjoso con jarabe"));
+            lista.AgregarProducto(new Producto("Dona Glaseada", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__10_,"Dona glaseada y suave"));
+            lista.AgregarProducto(new Producto("random", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__9_,"Descripción del producto random"));
+            lista.AgregarProducto(new Producto("random2", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__8_,"Descripción del producto random2"));
             CrearBotonProducto(lista, tabProductos.TabPages[0],"Comidas");
             lista.AgregarProducto(new Producto("Cafe Espresso", 1, 1.25, null, "Bebidas", null, "descripcion"));
             lista.AgregarProducto(new Producto("Capuchino", 1, 2.25, null, "Bebidas", null, "descripcion"));
