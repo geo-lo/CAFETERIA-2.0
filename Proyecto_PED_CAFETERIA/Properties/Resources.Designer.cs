@@ -22,7 +22,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Proyecto_PED_CAFETERIA.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,507 +63,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap _1_Almuerzo {
-            get {
-                object obj = ResourceManager.GetObject("1_Almuerzo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _10 {
-            get {
-                object obj = ResourceManager.GetObject("10", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _10_elote {
-            get {
-                object obj = ResourceManager.GetObject("10_elote", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _10_fanta {
-            get {
-                object obj = ResourceManager.GetObject("10_fanta", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _11 {
-            get {
-                object obj = ResourceManager.GetObject("11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _11_palomitas {
-            get {
-                object obj = ResourceManager.GetObject("11_palomitas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _11_sprite {
-            get {
-                object obj = ResourceManager.GetObject("11_sprite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _12 {
-            get {
-                object obj = ResourceManager.GetObject("12", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _12_ensalada {
-            get {
-                object obj = ResourceManager.GetObject("12_ensalada", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _12_monster {
-            get {
-                object obj = ResourceManager.GetObject("12_monster", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _13 {
-            get {
-                object obj = ResourceManager.GetObject("13", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _13_torta {
-            get {
-                object obj = ResourceManager.GetObject("13_torta", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _13_yogurt {
-            get {
-                object obj = ResourceManager.GetObject("13_yogurt", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _14 {
-            get {
-                object obj = ResourceManager.GetObject("14", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _14_cerveza {
-            get {
-                object obj = ResourceManager.GetObject("14_cerveza", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _14_tamales {
-            get {
-                object obj = ResourceManager.GetObject("14_tamales", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _15 {
-            get {
-                object obj = ResourceManager.GetObject("15", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _15_desayuno {
-            get {
-                object obj = ResourceManager.GetObject("15_desayuno", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _15_vino {
-            get {
-                object obj = ResourceManager.GetObject("15_vino", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _16 {
-            get {
-                object obj = ResourceManager.GetObject("16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _16_leche {
-            get {
-                object obj = ResourceManager.GetObject("16_leche", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _16_pasta {
-            get {
-                object obj = ResourceManager.GetObject("16_pasta", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _2_ {
-            get {
-                object obj = ResourceManager.GetObject("2_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _2_hamburguesa {
-            get {
-                object obj = ResourceManager.GetObject("2_hamburguesa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _3 {
-            get {
-                object obj = ResourceManager.GetObject("3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _3_coca {
-            get {
-                object obj = ResourceManager.GetObject("3_coca", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _3_taco {
-            get {
-                object obj = ResourceManager.GetObject("3_taco", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _4 {
-            get {
-                object obj = ResourceManager.GetObject("4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _4_sopa {
-            get {
-                object obj = ResourceManager.GetObject("4_sopa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _4_Te {
-            get {
-                object obj = ResourceManager.GetObject("4_Te", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _5 {
-            get {
-                object obj = ResourceManager.GetObject("5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _5_burrito {
-            get {
-                object obj = ResourceManager.GetObject("5_burrito", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _5_limonada {
-            get {
-                object obj = ResourceManager.GetObject("5_limonada", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _6 {
-            get {
-                object obj = ResourceManager.GetObject("6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _6_batidofresa {
-            get {
-                object obj = ResourceManager.GetObject("6_batidofresa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _6_nachos {
-            get {
-                object obj = ResourceManager.GetObject("6_nachos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _7 {
-            get {
-                object obj = ResourceManager.GetObject("7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _7_cafe_caliente {
-            get {
-                object obj = ResourceManager.GetObject("7_cafe_caliente", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _7_concha {
-            get {
-                object obj = ResourceManager.GetObject("7_concha", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _8 {
-            get {
-                object obj = ResourceManager.GetObject("8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _8_cafe_helado {
-            get {
-                object obj = ResourceManager.GetObject("8_cafe_helado", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _8_pollo {
-            get {
-                object obj = ResourceManager.GetObject("8_pollo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _9 {
-            get {
-                object obj = ResourceManager.GetObject("9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _9_pepsi {
-            get {
-                object obj = ResourceManager.GetObject("9_pepsi", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _9_quesadilla {
-            get {
-                object obj = ResourceManager.GetObject("9_quesadilla", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap agua {
-            get {
-                object obj = ResourceManager.GetObject("agua", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Carrito {
-            get {
-                object obj = ResourceManager.GetObject("Carrito", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap chocolate {
-            get {
-                object obj = ResourceManager.GetObject("chocolate", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap cuaso {
-            get {
-                object obj = ResourceManager.GetObject("cuaso", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap cupcake {
-            get {
-                object obj = ResourceManager.GetObject("cupcake", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Cuphead {
+        internal static System.Drawing.Bitmap Cuphead {
             get {
                 object obj = ResourceManager.GetObject("Cuphead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -573,87 +73,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Cuphead1 {
-            get {
-                object obj = ResourceManager.GetObject("Cuphead1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga {
-            get {
-                object obj = ResourceManager.GetObject("descarga", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga__1_ {
-            get {
-                object obj = ResourceManager.GetObject("descarga (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga__1_1 {
-            get {
-                object obj = ResourceManager.GetObject("descarga (1)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga__1_2 {
-            get {
-                object obj = ResourceManager.GetObject("descarga (1)2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga1 {
-            get {
-                object obj = ResourceManager.GetObject("descarga1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga2 {
-            get {
-                object obj = ResourceManager.GetObject("descarga2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap descarga3 {
-            get {
-                object obj = ResourceManager.GetObject("descarga3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Diseño_sin_título {
+        internal static System.Drawing.Bitmap Diseño_sin_título {
             get {
                 object obj = ResourceManager.GetObject("Diseño sin título", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -663,7 +83,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Diseño_sin_título__1_ {
+        internal static System.Drawing.Bitmap Diseño_sin_título__1_ {
             get {
                 object obj = ResourceManager.GetObject("Diseño sin título (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -673,7 +93,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__1_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__1_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -683,7 +103,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__10_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__10_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (10)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -693,97 +113,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__11_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (11)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__12_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (12)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__13_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (13)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__14_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (14)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__15_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (15)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__16_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (16)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__17_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (17)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__18_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (18)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__19_ {
-            get {
-                object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (19)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__2_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__2_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -793,7 +123,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__20_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__20_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (20)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -803,7 +133,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__21_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__21_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (21)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -813,7 +143,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__22_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__22_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (22)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -823,7 +153,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__23_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__23_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (23)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -833,7 +163,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__24_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__24_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (24)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -843,7 +173,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__25_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__25_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (25)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -853,7 +183,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__27_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__27_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (27)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -863,7 +193,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__28_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__28_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (28)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -873,7 +203,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__29_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__29_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (29)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -883,7 +213,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -893,7 +223,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_1 {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_1 {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (3)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -903,7 +233,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__30_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__30_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (30)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -913,7 +243,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__31_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__31_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (31)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -923,7 +253,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__32_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__32_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (32)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -933,7 +263,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__33_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__33_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (33)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -943,7 +273,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__34_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__34_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (34)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -953,7 +283,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__35_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__35_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (35)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -963,7 +293,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__36_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__36_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (36)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -973,7 +303,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__37_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__37_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (37)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -983,7 +313,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__38_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__38_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (38)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -993,7 +323,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__39_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__39_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (39)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1003,7 +333,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__4_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__4_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1013,7 +343,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__40_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__40_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (40)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1023,7 +353,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__41_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__41_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (41)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1033,7 +363,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__42_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__42_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (42)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1043,7 +373,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__43_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__43_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (43)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1053,7 +383,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__44_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__44_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (44)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1063,7 +393,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__46_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__46_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (46)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1073,7 +403,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__47_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__47_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (47)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1083,7 +413,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__48_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__48_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (48)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1093,7 +423,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__48_1 {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__48_1 {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (48)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1103,7 +433,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__49_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__49_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (49)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1113,7 +443,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__5_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__5_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (5)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1123,7 +453,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__50_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__50_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (50)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1133,7 +463,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__6_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__6_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (6)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1143,7 +473,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__7_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__7_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (7)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1153,7 +483,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__8_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__8_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (8)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1163,7 +493,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__9_ {
+        internal static System.Drawing.Bitmap Documento_A4_Catálogo_Supermercado_Moderno_Blanco__9_ {
             get {
                 object obj = ResourceManager.GetObject("Documento A4 Catálogo Supermercado Moderno Blanco (9)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1173,17 +503,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap dona {
-            get {
-                object obj = ResourceManager.GetObject("dona", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap dylce_aroma_cafe_iniciooo {
+        internal static System.Drawing.Bitmap dylce_aroma_cafe_iniciooo {
             get {
                 object obj = ResourceManager.GetObject("dylce aroma cafe iniciooo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1193,7 +513,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap dylce_aroma_cafe_iniciooo1 {
+        internal static System.Drawing.Bitmap dylce_aroma_cafe_iniciooo1 {
             get {
                 object obj = ResourceManager.GetObject("dylce aroma cafe iniciooo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1203,7 +523,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ESRTA_ES_LA_BUENA_ {
+        internal static System.Drawing.Bitmap ESRTA_ES_LA_BUENA_ {
             get {
                 object obj = ResourceManager.GetObject("ESRTA ES LA BUENA)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1213,7 +533,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ESRTA_ES_LA_BUENA_1 {
+        internal static System.Drawing.Bitmap ESRTA_ES_LA_BUENA_1 {
             get {
                 object obj = ResourceManager.GetObject("ESRTA ES LA BUENA)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1223,107 +543,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap galletas {
-            get {
-                object obj = ResourceManager.GetObject("galletas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap helado {
-            get {
-                object obj = ResourceManager.GetObject("helado", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap hotdog {
-            get {
-                object obj = ResourceManager.GetObject("hotdog", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap images {
-            get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap images__1_ {
-            get {
-                object obj = ResourceManager.GetObject("images (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap images__2_ {
-            get {
-                object obj = ResourceManager.GetObject("images (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap images1 {
-            get {
-                object obj = ResourceManager.GetObject("images1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Jugo {
-            get {
-                object obj = ResourceManager.GetObject("Jugo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Jugo1 {
-            get {
-                object obj = ResourceManager.GetObject("Jugo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Jugo2 {
-            get {
-                object obj = ResourceManager.GetObject("Jugo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__1_ {
+        internal static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__1_ {
             get {
                 object obj = ResourceManager.GetObject("Logo empresa cafetería divertida ilustrada (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1333,7 +553,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__1_1 {
+        internal static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__1_1 {
             get {
                 object obj = ResourceManager.GetObject("Logo empresa cafetería divertida ilustrada (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1343,7 +563,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__2_ {
+        internal static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__2_ {
             get {
                 object obj = ResourceManager.GetObject("Logo empresa cafetería divertida ilustrada (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1353,7 +573,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__2_1 {
+        internal static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__2_1 {
             get {
                 object obj = ResourceManager.GetObject("Logo empresa cafetería divertida ilustrada (2)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1363,7 +583,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__2_2 {
+        internal static System.Drawing.Bitmap Logo_empresa_cafetería_divertida_ilustrada__2_2 {
             get {
                 object obj = ResourceManager.GetObject("Logo empresa cafetería divertida ilustrada (2)2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1373,7 +593,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Mugman {
+        internal static System.Drawing.Bitmap Mugman {
             get {
                 object obj = ResourceManager.GetObject("Mugman", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1383,7 +603,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Mugman__1_ {
+        internal static System.Drawing.Bitmap Mugman__1_ {
             get {
                 object obj = ResourceManager.GetObject("Mugman (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1393,67 +613,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap pan1 {
-            get {
-                object obj = ResourceManager.GetObject("pan1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pan2 {
-            get {
-                object obj = ResourceManager.GetObject("pan2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pancaques {
-            get {
-                object obj = ResourceManager.GetObject("pancaques", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pantalla {
-            get {
-                object obj = ResourceManager.GetObject("pantalla", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap papas_fritas {
-            get {
-                object obj = ResourceManager.GetObject("papas fritas", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pastel {
-            get {
-                object obj = ResourceManager.GetObject("pastel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige {
+        internal static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige {
             get {
                 object obj = ResourceManager.GetObject("Presentación Historia del Café Ilustrado Café y Beige", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1463,7 +623,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige1 {
+        internal static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige1 {
             get {
                 object obj = ResourceManager.GetObject("Presentación Historia del Café Ilustrado Café y Beige1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1473,7 +633,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige2 {
+        internal static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige2 {
             get {
                 object obj = ResourceManager.GetObject("Presentación Historia del Café Ilustrado Café y Beige2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1483,7 +643,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige3 {
+        internal static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige3 {
             get {
                 object obj = ResourceManager.GetObject("Presentación Historia del Café Ilustrado Café y Beige3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1493,7 +653,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige4 {
+        internal static System.Drawing.Bitmap Presentación_Historia_del_Café_Ilustrado_Café_y_Beige4 {
             get {
                 object obj = ResourceManager.GetObject("Presentación Historia del Café Ilustrado Café y Beige4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1503,27 +663,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap sandwich {
-            get {
-                object obj = ResourceManager.GetObject("sandwich", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Sushi {
-            get {
-                object obj = ResourceManager.GetObject("Sushi", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TipoUsuario {
+        internal static System.Drawing.Bitmap TipoUsuario {
             get {
                 object obj = ResourceManager.GetObject("TipoUsuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1533,7 +673,7 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TipoUsuario1 {
+        internal static System.Drawing.Bitmap TipoUsuario1 {
             get {
                 object obj = ResourceManager.GetObject("TipoUsuario1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1543,19 +683,9 @@ namespace Proyecto_PED_CAFETERIA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap TipoUsuario2 {
+        internal static System.Drawing.Bitmap TipoUsuario2 {
             get {
                 object obj = ResourceManager.GetObject("TipoUsuario2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap waffles2 {
-            get {
-                object obj = ResourceManager.GetObject("waffles2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
