@@ -87,7 +87,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
                 PictureBox pic = new PictureBox
                 {
-                    Image = producto.Imagen,
+                   
                     SizeMode = PictureBoxSizeMode.Zoom,
                     Width = 70,
                     Height = 70,

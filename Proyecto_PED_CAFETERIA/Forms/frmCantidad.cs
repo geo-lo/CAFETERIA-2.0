@@ -17,7 +17,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
         // Variables para almacenar la información del producto seleccionado
         string nombreProducto;
         double precioProducto;
-        Image imagenProducto;
         string DescripcionProducto;
 
         public frmCantidad()
@@ -27,12 +26,11 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         // Constructor del formulario de cantidad que recibe el nombre del producto,
         // su precio, la imagen y la descripción
-        public frmCantidad(string nombre, double precio, Image imagen, string descripcionProducto)
+        public frmCantidad(string nombre, double precio, string descripcionProducto)
         {
             InitializeComponent();
             nombreProducto = nombre;
             precioProducto = precio;
-            imagenProducto = imagen;
             DescripcionProducto = descripcionProducto;
         }
 
@@ -54,8 +52,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             txtDesc.BorderStyle = BorderStyle.None;
             txtDesc.ReadOnly = true;
 
-            imagen.Image = imagenProducto;
-            imagen.SizeMode = PictureBoxSizeMode.Zoom;
+            
 
             numericUpDown1.Value = 1;
             actualizarPrecio();
@@ -146,7 +143,8 @@ namespace Proyecto_PED_CAFETERIA.Forms
             }
 
             int cantidad = (int)numericUpDown1.Value;
-            Producto prod = new Producto(nombreProducto, cantidad, precioProducto, btnAceptar, "Categoria", imagenProducto);
+            // DESPUÉS
+            Producto prod = new Producto(nombreProducto, 0, cantidad, precioProducto, btnAceptar, "Categoria", DescripcionProducto);
 
             ClaseGlobal.listaTemporal.AgregarProducto(prod);
 

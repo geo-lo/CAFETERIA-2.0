@@ -21,10 +21,10 @@ namespace Proyecto_PED_CAFETERIA.Clases
             SqlCommand comando = new SqlCommand();
 
             comando.Connection = AbrirConexion();
-            comando.CommandText = "SELECT IdProducto, NombreProducto, CantidadActual, PrecioUnitario FROM Inventario"; //Consulta SQL para obtener todos los productos
+            comando.CommandText = "SELECT IdProducto, NombreProducto, CantidadActual, PrecioUnitario, Categoria, Descripcion FROM Inventario";
 
             SqlDataReader leer = comando.ExecuteReader();
-            tabla.Load(leer); //Cargar los datos en la tabla
+            tabla.Load(leer);
 
             leer.Close();
             CerrarConexion();
@@ -32,22 +32,23 @@ namespace Proyecto_PED_CAFETERIA.Clases
         }
 
         //Insertar datos (Insert) en la tabla Inventario
-        public void Insertar(string nombre, int cantidad, double precio)
-
+        public void Insertar(string nombre, int cantidad, double precio, string categoria = "", string descripcion = "")
         {
             if (ExisteProducto(nombre))
             {
                 MessageBox.Show("El producto ya existe en el inventario.");
-                // Si existe, salimos de la función devolviendo 'false'
                 return;
             }
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = AbrirConexion();
-            comando.CommandText = "INSERT INTO Inventario (NombreProducto, CantidadActual, PrecioUnitario) VALUES (@nombre, @cantidad, @precio)"; //Consulta SQL para insertar un nuevo producto
+            comando.CommandText = @"INSERT INTO Inventario (NombreProducto, CantidadActual, PrecioUnitario, Categoria, Descripcion) 
+                                    VALUES (@nombre, @cantidad, @precio, @categoria, @descripcion)";
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@cantidad", cantidad);
             comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@categoria", categoria);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
 
             comando.ExecuteNonQuery();
             CerrarConexion();
@@ -101,34 +102,34 @@ namespace Proyecto_PED_CAFETERIA.Clases
         }
 
         //funcion para editar un producto por su ID, retorna true si se editó correctamente, false si no se encontró el ID
-        public bool EditarProducto(int id, string nombre, int cantidad, int stockMin, decimal precio)
-
+        public bool EditarProducto(int id, string nombre, int cantidad, int stockMin, decimal precio, string categoria = "", string descripcion = "")
         {
             SqlCommand comando = new SqlCommand();
             try
             {
                 comando.Connection = AbrirConexion();
 
-                // La consulta usa WHERE IdProducto para no modificar toda la tabla por error
                 comando.CommandText = @"UPDATE Inventario 
                                 SET NombreProducto = @nombre, 
                                     CantidadActual = @cantidad, 
                                     StockMinimo = @stockMin, 
-                                    PrecioUnitario = @precio, 
+                                    PrecioUnitario = @precio,
+                                    Categoria = @categoria,
+                                    Descripcion = @descripcion,
                                     UltimaActualizacion = GETDATE() 
                                 WHERE IdProducto = @id";
 
-                // Pasamos los parámetros
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@nombre", nombre);
                 comando.Parameters.AddWithValue("@cantidad", cantidad);
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
                 comando.Parameters.AddWithValue("@precio", precio);
+                comando.Parameters.AddWithValue("@categoria", categoria);
+                comando.Parameters.AddWithValue("@descripcion", descripcion);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
                 CerrarConexion();
 
-                // Retorna true si encontró el ID y lo modificó
                 return filasAfectadas > 0;
             }
             catch (Exception ex)
