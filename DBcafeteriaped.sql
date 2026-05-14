@@ -7,8 +7,8 @@ GO
 USE CafeteriaDB;
 GO
 
---INVENTARIO
-GO
+--Creamos las tablas necesarias para guardar los datos
+
 CREATE TABLE Inventario(
 IdProducto INT PRIMARY KEY IDENTITY(1,1),
 NombreProducto VARCHAR(100) NOT NULL,
@@ -29,9 +29,9 @@ TotalVenta AS (CantidadVendida * PrecioVenta),
 FechaVenta DATETIME DEFAULT GETDATE(),
 
 CONSTRAINT FK_Inventario_Ventas FOREIGN KEY (IdProducto)REFERENCES Inventario(IdProducto)
-);
-GO
 
+
+GO
 
 --TRIGGERS
 CREATE TRIGGER                   --Obtiene la fecha actual cada vez que se actualice el stock
@@ -46,3 +46,8 @@ BEGIN
     INNER JOIN inserted ON Inventario.IdProducto = inserted.IdProducto;
     END;
 GO
+USE CafeteriaDB;
+GO
+
+ALTER TABLE Inventario ADD Categoria VARCHAR(50) NULL;
+ALTER TABLE Inventario ADD Descripcion VARCHAR(255) NULL;
