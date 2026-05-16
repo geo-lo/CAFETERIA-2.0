@@ -1,4 +1,4 @@
-﻿using CAFETERIA.ClasesNuevas;
+using CAFETERIA.ClasesNuevas;
 using Proyecto_PED_CAFETERIA.Clases;
 using System;
 using System.Collections;
@@ -7,7 +7,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,20 +44,91 @@ namespace Proyecto_PED_CAFETERIA.Forms
             path.AddArc(new Rectangle(control.Width - radio, control.Height - radio, radio, radio), 0, 90);
             path.AddArc(new Rectangle(0, control.Height - radio, radio, radio), 90, 90);
             path.CloseFigure();
-
             control.Region = new Region(path);
         }
 
-
-
-        private void panel1_Scroll(object sender, ScrollEventArgs e)
+        // MÉTODO PARA CREAR BOTONES DINÁMICOS DESDE LA BASE DE DATOS
+        private void CrearBotonProducto(ListaProductos lista, TabPage pagina, string categoria)
         {
-            //
+            pagina.Controls.Clear();
+            pagina.AutoScroll = true;
+
+            int columnas = 3;
+            int anchoBtn = 230;
+            int altoBtn = 275;
+            int margen = 10;
+
+            int i = 0;
+            Nodo_ListaProductos actual = lista.Primero;
+
+            while (actual != null)
+            {
+                Producto p = actual.ProductoGuardado;
+
+                if (p.Categoria != categoria)
+                {
+                    actual = actual.siguiente;
+                    continue;
+                }
+
+                Button btn = new Button();
+                btn.Text = $"{p.NombreProducto}\n${p.Precio:F2}";
+                btn.Tag = p.Id;
+                btn.Size = new Size(anchoBtn, altoBtn);
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 224, 192);
+                btn.ForeColor = Color.FromArgb(70, 40, 10);
+                btn.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+                int fila = i / columnas;
+                int columna = i % columnas;
+                btn.Location = new Point(margen + columna * (anchoBtn + margen), margen + fila * (altoBtn + margen));
+
+                // Captura local para el lambda
+                Producto prod = p;
+                btn.Click += (s, e) =>
+                {
+                    frmCantidad frm = new frmCantidad(
+                        prod.NombreProducto,
+                        prod.Precio,
+                        prod.Descripcion
+                    );
+                    estiloForm(frm);
+                    frm.ShowDialog();
+                };
+
+                pagina.Controls.Add(btn);
+                i++;
+                actual = actual.siguiente;
+            }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        // CARGA PRODUCTOS DESDE LA BD Y RECONSTRUYE LOS BOTONES
+        public void CargarProductosDesdeDB()
         {
+            lista = new ListaProductos();
 
+            ConsultasDB repo = new ConsultasDB();
+            DataTable tabla = repo.MostrarInventario();
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                int id           = Convert.ToInt32(fila["IdProducto"]);
+                string nombre    = fila["NombreProducto"].ToString();
+                double p         = Convert.ToDouble(fila["PrecioUnitario"]);
+                string categoria = tabla.Columns.Contains("Categoria")   ? fila["Categoria"].ToString()   : "";
+                string desc      = tabla.Columns.Contains("Descripcion") ? fila["Descripcion"].ToString() : "";
+
+                Producto prod = new Producto(nombre, id, 1, p, null, categoria, desc);
+                lista.AgregarProducto(prod);
+            }
+
+            // tablaC es el nombre del TabControl en el Designer
+            string[] categorias = { "Comidas", "Bebidas", "Antojitos", "Mas" };
+            for (int i = 0; i < tablaC.TabPages.Count && i < categorias.Length; i++)
+            {
+                CrearBotonProducto(lista, tablaC.TabPages[i], categorias[i]);
+            }
         }
         //METODO PARA CREAR BOTONES DINAMICOS
         private void CrearBotonProducto(ListaProductos lista, TabPage pagina, string categoria)
@@ -123,66 +193,15 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            //crea botones dinamicos con los productos de la lista
+            CargarProductosDesdeDB();
 
-            //asi como lo hice con estos botones tienes que hacerlo con los demas,
-            //hasta la linea 169 porfa cuando termines borrame el mensaje de arriba,
-            //solo deja el mensaje de "Crear botones"
-            //luego necesito que le des estilo al form de: Form1.cs, FrmSalida, FrmCliente, frmProveedores (Solo agrega botones con diferentes marcas) y los que faltan
-            //Si ves algo que no tiene funcion no le metas mano si, plis esos que no tienen funcion van con la base de datos, de eso se ocupa cris
-            lista.AgregarProducto(new Producto("", 1, 1.00, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__1_,"DESCRIPCION"));
-            lista.AgregarProducto(new Producto("Pastel de Fruta", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_,"Pastel fresco de frutas"));
-            lista.AgregarProducto(new Producto("Croissant", 1, 1.75, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__4_,"Croissant mantecoso y crujiente"));
-            lista.AgregarProducto(new Producto("CupCake", 1, 1.75, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__5_,"Cupcake esponjoso con crema"));
-            lista.AgregarProducto(new Producto("Sandwich", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__6_,"Sandwich con ingredientes frescos"));
-            lista.AgregarProducto(new Producto("Pancake", 1, 2.00, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__7_,"Pancake esponjoso con jarabe"));
-            lista.AgregarProducto(new Producto("Dona Glaseada", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__10_,"Dona glaseada y suave"));
-            lista.AgregarProducto(new Producto("random", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__9_,"Descripción del producto random"));
-            lista.AgregarProducto(new Producto("random2", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__8_,"Descripción del producto random2"));
-            CrearBotonProducto(lista, tabProductos.TabPages[0],"Comidas");
-            lista.AgregarProducto(new Producto("Cafe Espresso", 1, 1.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Capuchino", 1, 2.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Latte Caliente", 1, 2.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Cafe Americano", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Chocolate Caliente", 1, 1.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Té Caliente", 1, 1.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Frappuccino", 1, 2.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Iced Latte", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Cold Brew", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Té Helado", 1, 1.50, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Ice Coffee", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            CrearBotonProducto(lista, tabProductos.TabPages[1],"Bebidas");
-            lista.AgregarProducto(new Producto("Pastelito de Carne", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Pupusas de Frijol con Queso", 1, 0.75, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Nuegados de Yuca", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Tamales de Pollo", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Empanadas de Frijol", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Yuca Frita", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Elote Loco", 1, 1.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Tamales de Elote", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Papas Fritas", 1, 1.50, null, "Antojitos", null, "descripcion"));
-            CrearBotonProducto(lista, tabProductos.TabPages[2],"Antojitos");
-            lista.AgregarProducto(new Producto("Leche Deslactosada", 1, 1.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Extra Crema Batida", 1, 1.00, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Galletas Oreo", 1, 0.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Cafe en Grano", 1, 2.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Leche de Almendra", 1, 1.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Papas Pringles", 1, 1.00, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Nutella", 1, 1.00, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Ensalada", 1, 2.00, null, "Mas", null, "descripcion"));
-            CrearBotonProducto(lista, tabProductos.TabPages[3],"Mas");
-
-            tabProductos.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabProductos.DrawItem += tabProductos_DrawItem;
-
-
-            //  REDONDEAR CONTROLES REALES
+            tablaC.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tablaC.DrawItem += tabProductos_DrawItem;
 
             RedondearControl(btnConfirmar, 20);
             RedondearControl(btnCarrito, 20);
-            RedondearControl(btnNombre, 20); // 👈 NUEVO
+            RedondearControl(btnNombre, 20);
 
-            //  COLORES BONITOS
             btnConfirmar.BackColor = Color.FromArgb(255, 240, 220);
             btnConfirmar.ForeColor = Color.SaddleBrown;
             btnConfirmar.FlatStyle = FlatStyle.Flat;
@@ -192,23 +211,12 @@ namespace Proyecto_PED_CAFETERIA.Forms
             btnCarrito.FlatStyle = FlatStyle.Flat;
             btnCarrito.FlatAppearance.BorderSize = 0;
 
-            //  ESTILO PARA btnNombre
             btnNombre.BackColor = Color.FromArgb(255, 240, 220);
             btnNombre.ForeColor = Color.SaddleBrown;
             btnNombre.FlatStyle = FlatStyle.Flat;
             btnNombre.FlatAppearance.BorderSize = 0;
-
-            //  INPUTS LIMPIOS
-
-            
-
-
-
-
-
-
         }
-        // Método para configurar el estilo del los formularios
+
         private void estiloForm(Form frm)
         {
             frm.BackColor = Color.FromArgb(255, 255, 255);
@@ -219,92 +227,44 @@ namespace Proyecto_PED_CAFETERIA.Forms
             frm.ShowInTaskbar = false;
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
-
-            
         }
+
         private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
-            // Validar que se haya ingresado un nombre de cliente, que haya productos en la lista temporal y
-            // que se haya agregado al menos un producto antes de confirmar el pedido
             if (string.IsNullOrEmpty(lblNombre.Text))
             {
                 MessageBox.Show("Ingrese un Nombre", "AVISO");
                 return;
-
             }
-            if (ClaseGlobal.listaTemporal == null)
-            {
-                MessageBox.Show("No hay Productos en el Pedido", "AVISO");
-                return;
-            }
-            if (ClaseGlobal.listaTemporal.Primero == null)
+            if (ClaseGlobal.listaTemporal == null || ClaseGlobal.listaTemporal.Primero == null)
             {
                 MessageBox.Show("Agregue al menos un producto", "AVISO");
                 return;
             }
-            // Si todas las validaciones pasan, se crea un nuevo pedido con el nombre del cliente
-            // y la lista de productos seleccionados,
-            // luego se encola el pedido en la cola de pedidos y se muestra un mensaje de éxito
-            // Finalmente, se limpia la lista temporal
-            // y el campo de nombre para preparar el formulario para un nuevo pedido
+
             string nombreCliente = lblNombre.Text;
             Pedido pedido = new Pedido(ClaseGlobal.listaTemporal, nombreCliente);
             ClaseGlobal.colaPedidos.Encolar(pedido);
             MessageBox.Show("Pedido en la cola", "EXITO");
             ClaseGlobal.listaTemporal = new ListaProductos();
             lblNombre.Text = "";
-
         }
 
         private void btnNombre_Click(object sender, EventArgs e)
         {
-            // Al hacer clic en el botón para ingresar el nombre del cliente
-            // se abre el formulario de cliente
-
             frmCliente frm = new frmCliente();
             if (frm.ShowDialog() == DialogResult.OK)
-            {
                 lblNombre.Text = frm.NombreCliente;
-            }
-
         }
 
         private void FrmPedirOrden_Shown(object sender, EventArgs e)
         {
-            // Al mostrar el formulario, se enfoca el campo de texto
-            // para que el usuario pueda ingresar el nombre del cliente de inmediato
             lblNombre.Focus();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            if (tabProductos.SelectedTab == tabPage1)
-            {
-                tabPage1.Controls.Clear();
-
-                FrmPedirOrden frm = new FrmPedirOrden();
-                frm.TopLevel = false;
-                frm.FormBorderStyle = FormBorderStyle.None;
-                frm.Dock = DockStyle.Fill;
-
-                tabPage1.Controls.Add(frm);
-                frm.Show();
-                frm.BringToFront();
-            }
-        }
-
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            frmCarrito carrito = new frmCarrito();
-            carrito.ShowDialog();
-            estiloForm(carrito);
         }
 
         private void btnCarrito_Click(object sender, EventArgs e)
         {
-            //si el carrito esta vacio muestra mensaje de error
-            if (ClaseGlobal.listaTemporal.Primero==null)
+            if (ClaseGlobal.listaTemporal.Primero == null)
             {
                 MessageBox.Show("Agregue al menos un producto");
                 return;
@@ -312,18 +272,8 @@ namespace Proyecto_PED_CAFETERIA.Forms
             frmCarrito carrito = new frmCarrito();
             estiloForm(carrito);
             carrito.ShowDialog();
-
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
         private void tabProductos_DrawItem(object sender, DrawItemEventArgs e)
         {
             TabControl tab = sender as TabControl;
@@ -332,22 +282,66 @@ namespace Proyecto_PED_CAFETERIA.Forms
             Rectangle area = tab.GetTabRect(e.Index);
 
             bool seleccionado = (e.Index == tab.SelectedIndex);
-
             Color fondo = seleccionado ? Color.FromArgb(95, 45, 15) : Color.White;
             Color texto = seleccionado ? Color.White : Color.SaddleBrown;
 
             using (SolidBrush brush = new SolidBrush(fondo))
-            {
                 g.FillRectangle(brush, area);
-            }
 
             TextRenderer.DrawText(g, pagina.Text, tab.Font, area, texto,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
 
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
+        // ── Handlers vacíos requeridos por el Designer ───────────────────────
+        private void tabPage1_Click(object sender, EventArgs e) { }
+        private void tabPage2_Click(object sender, EventArgs e) { }
+        private void tabPage1_Click_1(object sender, EventArgs e) { }
+        private void label3_Click(object sender, EventArgs e) { }
 
-        }
+        // tabPage1 - Comidas
+        private void button2_Click(object sender, EventArgs e) { }
+        private void btnPastel_Click(object sender, EventArgs e) { }
+        private void button12_Click(object sender, EventArgs e) { }
+        private void button8_Click(object sender, EventArgs e) { }
+        private void button3_Click(object sender, EventArgs e) { }
+        private void button11_Click(object sender, EventArgs e) { }
+        private void button1_Click(object sender, EventArgs e) { }
+        private void button6_Click(object sender, EventArgs e) { }
+        private void btnPan_Click_1(object sender, EventArgs e) { }
+
+        // tabPage2 - Bebidas
+        private void button13_Click(object sender, EventArgs e) { }
+        private void button19_Click(object sender, EventArgs e) { }
+        private void button15_Click(object sender, EventArgs e) { }
+        private void button4_Click_1(object sender, EventArgs e) { }
+        private void button5_Click_1(object sender, EventArgs e) { }
+        private void button20_Click(object sender, EventArgs e) { }
+        private void button17_Click(object sender, EventArgs e) { }
+        private void button18_Click(object sender, EventArgs e) { }
+        private void button28_Click(object sender, EventArgs e) { }
+        private void button23_Click(object sender, EventArgs e) { }
+        private void button25_Click(object sender, EventArgs e) { }
+
+        // tabPage3 - Antojitos
+        private void button44_Click(object sender, EventArgs e) { }
+        private void button34_Click(object sender, EventArgs e) { }
+        private void button42_Click(object sender, EventArgs e) { }
+        private void button39_Click(object sender, EventArgs e) { }
+        private void button38_Click(object sender, EventArgs e) { }
+        private void button35_Click(object sender, EventArgs e) { }
+        private void button36_Click(object sender, EventArgs e) { }
+        private void button31_Click(object sender, EventArgs e) { }
+        private void button30_Click(object sender, EventArgs e) { }
+
+        // tabPage4 - Mas
+        private void button60_Click(object sender, EventArgs e) { }
+        private void button59_Click(object sender, EventArgs e) { }
+        private void button58_Click(object sender, EventArgs e) { }
+        private void button56_Click(object sender, EventArgs e) { }
+        private void button55_Click(object sender, EventArgs e) { }
+        private void button54_Click(object sender, EventArgs e) { }
+        private void button53_Click(object sender, EventArgs e) { }
+        private void button49_Click(object sender, EventArgs e) { }
+        private void button45_Click(object sender, EventArgs e) { }
     }
 }

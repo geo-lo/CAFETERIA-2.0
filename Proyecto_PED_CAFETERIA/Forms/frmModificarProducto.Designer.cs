@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -37,16 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 16);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "subir la imagen del productoi";
             // 
             // txtPrecio
             // 
@@ -72,7 +66,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 120);
+            this.label4.Location = new System.Drawing.Point(30, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 12;
@@ -116,14 +110,51 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(90, 167);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(169, 24);
+            this.cmbCategoria.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Categoria:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(90, 217);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(169, 22);
+            this.txtDescripcion.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(2, 223);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Descripcion:";
+            // 
             // frmModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 453);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtNombre);
@@ -132,14 +163,13 @@
             this.Controls.Add(this.label2);
             this.Name = "frmModificarProducto";
             this.Text = "frmModificarProducto";
+            this.Load += new System.EventHandler(this.frmModificarProducto_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -148,5 +178,9 @@
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label5;
     }
 }

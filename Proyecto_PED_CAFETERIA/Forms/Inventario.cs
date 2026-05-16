@@ -15,6 +15,14 @@ namespace Proyecto_PED_CAFETERIA.Forms
 {
     public partial class Inventario : Form
     {
+        // Evento que avisa al FrmPedirOrden que hubo cambios en los productos
+        public event EventHandler ProductosModificados;
+
+        private void NotificarCambios()
+        {
+            ProductosModificados?.Invoke(this, EventArgs.Empty);
+        }
+
         public Inventario()
         {
             InitializeComponent();
@@ -142,20 +150,21 @@ namespace Proyecto_PED_CAFETERIA.Forms
         // Acciones del boton agregar
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            btn = true; // Indica que se abrirá el formulario para agregar un nuevo producto
+            btn = true;
             if (modificar == null || modificar.IsDisposed)
             {
                 modificar = new frmModificarProducto();
                 modificar.Show();
-                modificar.refrescar += RefrescarInventario; // Suscribirse al evento de refrescar
+                modificar.refrescar += () =>
+                {
+                    RefrescarInventario();
+                    NotificarCambios(); // Avisa al form principal
+                };
             }
             else
             {
                 modificar.BringToFront();
             }
-            
-            
-            
         }
 
         // funcion para refrescar el datagridview con los datos de la tabla Inventario
@@ -184,7 +193,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
             repo.EliminarProducto(id);
             RefrescarInventario();
-     
+            NotificarCambios(); // Avisa al form principal
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -212,7 +221,11 @@ namespace Proyecto_PED_CAFETERIA.Forms
             {
                 modificar = new frmModificarProducto();
                 modificar.idRecibido = txtId.Text;
-                modificar.refrescar += RefrescarInventario;
+                modificar.refrescar += () =>
+                {
+                    RefrescarInventario();
+                    NotificarCambios(); // Avisa al form principal
+                };
                 modificar.Show();
             }
             else
