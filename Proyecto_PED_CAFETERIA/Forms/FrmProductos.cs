@@ -1,7 +1,6 @@
 using CAFETERIA.ClasesNuevas;
 using Proyecto_PED_CAFETERIA.Clases;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,9 +29,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             InitializeComponent();
             this.nombreProducto = nombreProducto;
             this.precio = precio;
-          
         }
-        
 
         // MÉTODO PARA REDONDEAR
         private void RedondearControl(Control control, int radio)
@@ -128,66 +125,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
             for (int i = 0; i < tablaC.TabPages.Count && i < categorias.Length; i++)
             {
                 CrearBotonProducto(lista, tablaC.TabPages[i], categorias[i]);
-            }
-        }
-        //METODO PARA CREAR BOTONES DINAMICOS
-        private void CrearBotonProducto(ListaProductos lista, TabPage pagina, string categoria)
-        {
-            MessageBox.Show("Creando botones para la categoría: " + categoria);
-            pagina.Controls.Clear();
-            pagina.AutoScroll = true;
-
-            int columnas = 3;
-            int anchoBtn = 230;
-            int altoBtn = 275;
-            int margen = 10;
-
-            int i = 0;
-            Nodo_ListaProductos actual = lista.Primero;
-
-            while (actual != null && i < 9)
-            {
-                Producto p = actual.ProductoGuardado;
-
-                if (p.Categoria != categoria)
-                {
-                    actual = actual.siguiente;
-                    continue;
-                }
-
-                Button btn = new Button();
-                btn.Text = p.NombreProducto;
-                btn.BackgroundImage = p.Imagen;
-                btn.BackgroundImageLayout = ImageLayout.Zoom;
-                btn.Size = new Size(anchoBtn, altoBtn);
-
-                int fila = i / columnas;
-                int columna = i % columnas;
-
-                int x = margen + (columna * (anchoBtn + margen));
-                int y = margen + (fila * (altoBtn + margen));
-
-                btn.Location = new Point(x, y);
-
-                btn.Click += (s, e) =>
-                {
-                    frmCantidad frm = new   frmCantidad(
-                        p.NombreProducto,
-                        p.Precio,
-                        p.Imagen,
-                        p.Descripcion,
-                        p.Categoria
-                        
-                    );
-
-                    estiloForm(frm);
-                    frm.ShowDialog();
-                };
-
-                pagina.Controls.Add(btn);
-
-                i++;
-                actual = actual.siguiente;
             }
         }
 
