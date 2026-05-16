@@ -13,6 +13,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
 {
     public partial class PedidosPreparados : Form
     {
+        public static PedidosPreparados instancia;
         public PedidosPreparados()
         {
             InitializeComponent();
@@ -22,11 +23,8 @@ namespace Proyecto_PED_CAFETERIA.Forms
         {
             AplicarEstiloPreparados();
 
-            dgvPreparados.Columns.Clear();
-            dgvPreparados.Columns.Add("Cliente", "Cliente");
-            dgvPreparados.Columns.Add("Productos", "Productos");
-            dgvPreparados.Columns.Add("Total", "Total");
-
+            ConsultasDB repo = new ConsultasDB();
+            dgvPreparados.DataSource = repo.MostrarHistorialVentas();
             //CargarPedidos();
         }
 
@@ -128,6 +126,25 @@ namespace Proyecto_PED_CAFETERIA.Forms
            
         }
 
-     
+        
+
+
+        public void MostrarPreparados()
+        {
+            dgvPreparados.Rows.Clear();
+
+            NodoHistorial actual = ClaseGlobal.historial.Primero;
+            int contador = 0;
+
+            while (actual != null)
+            {
+                dgvPreparados.Rows.Add(actual.Cliente, actual.Productos, actual.Total);
+                actual = actual.siguiente;
+                contador++;
+            }
+
+            label2.Text = "Pedidos listos: " + contador;
         }
+
+    }
     }

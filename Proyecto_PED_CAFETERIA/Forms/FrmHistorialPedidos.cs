@@ -25,14 +25,14 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         public void AgregarHistorial(string cliente, string productos, string total)
         {
-           
+
         }
 
         private void FrmHistorialPedidos_Load(object sender, EventArgs e)
         {
 
             ConfigurarGridHistorial();
-           // CargarHistorial();
+            // CargarHistorial();
             estiloDataGrid(dgvHistorial);
             dgvHistorial.MultiSelect = false;
             dgvHistorial.ReadOnly = true;
@@ -126,7 +126,14 @@ namespace Proyecto_PED_CAFETERIA.Forms
         // ESTE BOTON MANDA EL PEDIDO A PREPARADOS
         private void btnPreparar_Click(object sender, EventArgs e)
         {
-            
+            if (dgvHistorial.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay pedidos en el historial.", "Aviso");
+                return;
+            }
+
+            dgvHistorial.Rows.RemoveAt(0);
+            MessageBox.Show("Pedido preparado.", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
