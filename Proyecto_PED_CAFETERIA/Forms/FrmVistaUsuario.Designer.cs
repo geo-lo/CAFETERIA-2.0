@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -43,11 +44,10 @@
             this.panelFill = new System.Windows.Forms.Panel();
             this.Bienvenida = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLateral
@@ -68,7 +68,17 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(152, 479);
             this.panelLateral.TabIndex = 0;
-            this.panelLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLateral_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.Logo_empresa_cafetería_divertida_ilustrada__2_2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 124);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // button8
             // 
@@ -244,17 +254,6 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.Logo_empresa_cafetería_divertida_ilustrada__2_2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmVistaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,9 +268,9 @@
             this.Load += new System.EventHandler(this.FrmVistaUsuario_Load);
             this.panelLateral.ResumeLayout(false);
             this.panelLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -18,7 +18,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
         string nombreProducto;
         double precioProducto;
         string DescripcionProducto;
-        string categoriaProducto;
 
         public frmCantidad()
         {
@@ -33,7 +32,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
             nombreProducto = nombre;
             precioProducto = precio;
             DescripcionProducto = descripcionProducto;
-
         }
 
         // Al cargar el formulario de cantidad, se muestra la imagen del producto,
