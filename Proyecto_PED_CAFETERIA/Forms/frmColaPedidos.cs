@@ -134,8 +134,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
             }
 
             int index = dgvPedidos.SelectedRows[0].Index;
-
-
             Pedido pedido = ClaseGlobal.colaPedidos.EliminarPorSeleccion(index);
 
             if (pedido == null)
@@ -144,15 +142,25 @@ namespace Proyecto_PED_CAFETERIA.Forms
                 return;
             }
 
+            // Guardar en BD
+            ConsultasDB repo = new ConsultasDB();
+            Nodo_ListaProductos actual = pedido.ProductosSeleccionados.Primero;
+            while (actual != null)
+            {
+                Producto p = actual.ProductoGuardado;
+                repo.RegistrarVenta(p.NombreProducto, p.Cantidad, (decimal)p.Precio);
+                actual = actual.siguiente;
+            }
+
             string cliente = pedido.nombreCliente;
             string productos = pedido.ProductosSeleccionados.ObtenerProductosTexto();
-            string total = pedido.CalcularTotal().ToString("0.00") + "$";
-
+            string total = "$" + pedido.CalcularTotal().ToString("0.00");
 
             ClaseGlobal.historial.Agregar(cliente, productos, total);
             MostrarPedidos();
 
-            MessageBox.Show("Pedido procesado correctamente", "Éxito");
+            MessageBox.Show("Pedido procesado y guardado correctamente", "Éxito");
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

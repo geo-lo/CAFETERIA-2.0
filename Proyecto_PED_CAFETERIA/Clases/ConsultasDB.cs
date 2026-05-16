@@ -138,53 +138,39 @@ namespace Proyecto_PED_CAFETERIA.Clases
                 throw new Exception("Error al editar el producto: " + ex.Message);
             }
         }
-        //Registra las ventas en la base de datos
-        /*public bool RegistrarVenta(int idProducto, string nombre, int cantidad, decimal precio)
+        
+        //Consulta para guardar el historial de pedidos en la base de datos
+        public void RegistrarVenta(string nombre, int cantidad, decimal precio)
         {
-            using (SqlConnection conexion = AbrirConexion())
-            {
-                // Iniciamos una transacción para asegurar que ambos pasos se cumplan
-                SqlTransaction transaccion = conexion.BeginTransaction();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = AbrirConexion();
+            comando.CommandText = @"INSERT INTO HistoriaVentas
+                                    (NombreProducto, CantidadVendida, PrecioVenta)
+                                    VALUES ( @nombre, @cantidad, @precio)";
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.Parameters.AddWithValue("@precio", precio);
 
-                try
-                {
-                    // PASO 1: Insertar en HistorialVentas
-                    string queryHistorial = @"INSERT INTO HistorialVentas (IdProducto, NombreProducto, CantidadVendida, PrecioVenta) 
-                                     VALUES (@id, @nombre, @cantidad, @precio)";
+            comando.ExecuteNonQuery();
+            CerrarConexion();
+        }
 
-                    SqlCommand cmdHistorial = new SqlCommand(queryHistorial, conexion, transaccion);
-                    cmdHistorial.Parameters.AddWithValue("@id", idProducto);
-                    cmdHistorial.Parameters.AddWithValue("@nombre", nombre);
-                    cmdHistorial.Parameters.AddWithValue("@cantidad", cantidad);
-                    cmdHistorial.Parameters.AddWithValue("@precio", precio);
-                    cmdHistorial.ExecuteNonQuery();
+        //Obtiene los datos del historial de ventas de la DB
+        public DataTable MostrarHistorialVentas()
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand comando = new SqlCommand();
 
-                    // PASO 2: Descontar del Inventario
-                    string queryInventario = @"UPDATE Inventario 
-                                      SET CantidadActual = CantidadActual - @cantidad, 
-                                          UltimaActualizacion = GETDATE() 
-                                      WHERE IdProducto = @id";
+            comando.Connection = AbrirConexion();
+            comando.CommandText = "SELECT IdRegistro, NombreProducto, TotalVenta, FechaVenta FROM HistoriaVentas ORDER BY FechaVenta DESC";
 
-                    SqlCommand cmdInventario = new SqlCommand(queryInventario, conexion, transaccion);
-                    cmdInventario.Parameters.AddWithValue("@cantidad", cantidad);
-                    cmdInventario.Parameters.AddWithValue("@id", idProducto);
-                    cmdInventario.ExecuteNonQuery();
+            SqlDataReader leer = comando.ExecuteReader();
+            tabla.Load(leer);
 
-                    // Si ambos pasos fueron exitosos, confirmamos los cambios en la DB
-                    transaccion.Commit();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    // Si algo falla, deshacemos todo para no dejar datos corruptos
-                    transaccion.Rollback();
-                    throw new Exception("Error al procesar la venta: " + ex.Message);
-                }
-                finally
-                {
-                    CerrarConexion();
-                }
-            }
-        }*/
+            leer.Close();
+            CerrarConexion();
+            return tabla;
+        }
+
     }
 }
