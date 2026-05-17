@@ -42,65 +42,73 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 251);
+            this.label5.Location = new System.Drawing.Point(39, 204);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 16);
+            this.label5.Size = new System.Drawing.Size(141, 13);
             this.label5.TabIndex = 16;
             this.label5.Text = "subir la imagen del productoi";
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(90, 117);
+            this.txtPrecio.Location = new System.Drawing.Point(68, 95);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(169, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(128, 20);
             this.txtPrecio.TabIndex = 15;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(90, 65);
+            this.txtCantidad.Location = new System.Drawing.Point(68, 53);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(169, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(128, 20);
             this.txtCantidad.TabIndex = 14;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(90, 12);
+            this.txtNombre.Location = new System.Drawing.Point(68, 10);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(169, 22);
+            this.txtNombre.Size = new System.Drawing.Size(128, 20);
             this.txtNombre.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 120);
+            this.label4.Location = new System.Drawing.Point(15, 98);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Precio:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 65);
+            this.label3.Location = new System.Drawing.Point(15, 53);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Cantidad:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 12);
+            this.label2.Location = new System.Drawing.Point(15, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Nombre:";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(156, 371);
+            this.btnCancelar.Location = new System.Drawing.Point(117, 301);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(131, 70);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 57);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -108,9 +116,10 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(12, 371);
+            this.btnAceptar.Location = new System.Drawing.Point(9, 301);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(131, 70);
+            this.btnAceptar.Size = new System.Drawing.Size(98, 57);
             this.btnAceptar.TabIndex = 18;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -118,9 +127,9 @@
             // 
             // frmModificarProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 453);
+            this.ClientSize = new System.Drawing.Size(643, 368);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label5);
@@ -130,6 +139,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmModificarProducto";
             this.Text = "frmModificarProducto";
             this.ResumeLayout(false);

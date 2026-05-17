@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblN = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,22 +45,12 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(276, 20);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(54, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "NOMBRE";
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(279, 46);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(175, 20);
             this.txtNombre.TabIndex = 2;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // lblN
@@ -91,7 +80,6 @@
             this.Controls.Add(this.lblN);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnAceptar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCliente";
@@ -99,7 +87,6 @@
             this.Text = "frmCliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.Shown += new System.EventHandler(this.frmCliente_Shown);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCliente_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,7 +96,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblN;

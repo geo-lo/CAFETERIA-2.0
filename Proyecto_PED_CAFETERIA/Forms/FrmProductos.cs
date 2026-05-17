@@ -63,7 +63,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
         //METODO PARA CREAR BOTONES DINAMICOS
         private void CrearBotonProducto(ListaProductos lista, TabPage pagina, string categoria)
         {
-            MessageBox.Show("Creando botones para la categoría: " + categoria);
             pagina.Controls.Clear();
             pagina.AutoScroll = true;
 
@@ -75,7 +74,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             int i = 0;
             Nodo_ListaProductos actual = lista.Primero;
 
-            while (actual != null && i < 9)
+            while (actual != null)
             {
                 Producto p = actual.ProductoGuardado;
 
@@ -86,10 +85,20 @@ namespace Proyecto_PED_CAFETERIA.Forms
                 }
 
                 Button btn = new Button();
-                btn.Text = p.NombreProducto;
+
+                // --- ELIMINAMOS EL TEXTO PARA QUE NO TAPE LA IMAGEN ---
+                btn.Text = "";
+
+                // --- CONFIGURACIÓN DE IMAGEN ---
                 btn.BackgroundImage = p.Imagen;
                 btn.BackgroundImageLayout = ImageLayout.Zoom;
+
+                // --- ESTILO DEL BOTÓN ---
                 btn.Size = new Size(anchoBtn, altoBtn);
+                btn.BackColor = Color.White;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0; // Sin bordes para que resalte tu diseño
+                btn.Cursor = Cursors.Hand;
 
                 int fila = i / columnas;
                 int columna = i % columnas;
@@ -99,15 +108,15 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
                 btn.Location = new Point(x, y);
 
+                // EVENTO CLICK
                 btn.Click += (s, e) =>
                 {
-                    frmCantidad frm = new   frmCantidad(
+                    frmCantidad frm = new frmCantidad(
                         p.NombreProducto,
                         p.Precio,
                         p.Imagen,
                         p.Descripcion,
                         p.Categoria
-                        
                     );
 
                     estiloForm(frm);
@@ -125,51 +134,48 @@ namespace Proyecto_PED_CAFETERIA.Forms
         {
             //crea botones dinamicos con los productos de la lista
 
-            //asi como lo hice con estos botones tienes que hacerlo con los demas,
-            //hasta la linea 169 porfa cuando termines borrame el mensaje de arriba,
-            //solo deja el mensaje de "Crear botones"
-            //luego necesito que le des estilo al form de: Form1.cs, FrmSalida, FrmCliente, frmProveedores (Solo agrega botones con diferentes marcas) y los que faltan
-            //Si ves algo que no tiene funcion no le metas mano si, plis esos que no tienen funcion van con la base de datos, de eso se ocupa cris
-            lista.AgregarProducto(new Producto("", 1, 1.00, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__1_,"DESCRIPCION"));
-            lista.AgregarProducto(new Producto("Pastel de Fruta", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_,"Pastel fresco de frutas"));
-            lista.AgregarProducto(new Producto("Croissant", 1, 1.75, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__4_,"Croissant mantecoso y crujiente"));
-            lista.AgregarProducto(new Producto("CupCake", 1, 1.75, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__5_,"Cupcake esponjoso con crema"));
-            lista.AgregarProducto(new Producto("Sandwich", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__6_,"Sandwich con ingredientes frescos"));
-            lista.AgregarProducto(new Producto("Pancake", 1, 2.00, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__7_,"Pancake esponjoso con jarabe"));
-            lista.AgregarProducto(new Producto("Dona Glaseada", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__10_,"Dona glaseada y suave"));
-            lista.AgregarProducto(new Producto("random", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__9_,"Descripción del producto random"));
-            lista.AgregarProducto(new Producto("random2", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__8_,"Descripción del producto random2"));
+                                                         
+           
+            lista.AgregarProducto(new Producto("", 1, 1.00, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__1_,"Deliciosas galleta de chispa de chocolate "));
+            lista.AgregarProducto(new Producto("Pastel de Fruta", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__3_, "Deliciosa combinación de frutas de temporada sobre una base crujiente"));
+            lista.AgregarProducto(new Producto("Croissant", 1, 1.75, null, "Comidas",Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__4_, "Bollería francesa hojaldrada, dorada y con sabor a mantequilla pura"));
+            lista.AgregarProducto(new Producto("CupCake", 1, 1.75, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__5_, "Pequeño bizcocho esponjoso con cobertura de crema suave"));
+            lista.AgregarProducto(new Producto("Sandwich", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__6_, "Sandwich clásico con ingredientes frescos del día"));
+            lista.AgregarProducto(new Producto("Pancake", 1, 2.00, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__7_, "Torres de panqueques esponjosos servidos con jarabe de miel"));
+            lista.AgregarProducto(new Producto("Dona Glaseada", 1, 1.25, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__10_, "Dona suave con una capa fina de glaseado dulce"));
+            lista.AgregarProducto(new Producto("random", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__9_,"Delicioso gelado de frutas tradicional para tus antojos"));
+            lista.AgregarProducto(new Producto("random2", 1, 1.50, null, "Comidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__8_,"Delicioso pan recien horneado"));
             CrearBotonProducto(lista, tabProductos.TabPages[0],"Comidas");
-            lista.AgregarProducto(new Producto("Cafe Espresso", 1, 1.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Capuchino", 1, 2.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Latte Caliente", 1, 2.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Cafe Americano", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Chocolate Caliente", 1, 1.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Té Caliente", 1, 1.25, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Frappuccino", 1, 2.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Iced Latte", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Cold Brew", 1, 1.75, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Té Helado", 1, 1.50, null, "Bebidas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Ice Coffee", 1, 1.75, null, "Bebidas", null, "descripcion"));
+            lista.AgregarProducto(new Producto("Cafe Espresso", 1, 1.25, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__29_, "Deliciosa combinación de frutas de temporada sobre una base crujiente"));
+            lista.AgregarProducto(new Producto("Capuchino", 1, 2.25, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__28_, "Equilibrio perfecto entre espresso, leche vaporizada y espuma densa"));
+            lista.AgregarProducto(new Producto("Latte Caliente", 1, 2.25, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__27_, "Café suave con una generosa cantidad de leche cremosa al vapor"));
+            lista.AgregarProducto(new Producto("Cafe Americano", 1, 1.75, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__25_, "Espresso diluido en agua caliente para un sabor más ligero"));
+            lista.AgregarProducto(new Producto("Chocolate Caliente", 1, 1.25, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__30_, "Bebida reconfortante de cacao fundido con leche espumosa"));
+            lista.AgregarProducto(new Producto("Té Caliente", 1, 1.25, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__31_, "Selección de hierbas e infusiones naturales servidas bien calientes"));
+            lista.AgregarProducto(new Producto("Frappuccino", 1, 2.75, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__23_, "Café helado batido con hielo y decorado con crema batida"));
+            lista.AgregarProducto(new Producto("Iced Latte", 1, 1.75, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__21_, "La versión fría de nuestro latte clásico sobre cubos de hielo"));
+            lista.AgregarProducto(new Producto("Cold Brew", 1, 1.75, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__22_, "Café de extracción lenta en frío para resaltar notas dulces y menos ácidas"));
+            lista.AgregarProducto(new Producto("Té Helado", 1, 1.50, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__20_, "Té refrescante servido frío con un toque cítrico de limón"));
+            lista.AgregarProducto(new Producto("Ice Coffee", 1, 1.75, null, "Bebidas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__24_, "Café filtrado tradicional servido con hielo"));
             CrearBotonProducto(lista, tabProductos.TabPages[1],"Bebidas");
-            lista.AgregarProducto(new Producto("Pastelito de Carne", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Pupusas de Frijol con Queso", 1, 0.75, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Nuegados de Yuca", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Tamales de Pollo", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Empanadas de Frijol", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Yuca Frita", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Elote Loco", 1, 1.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Tamales de Elote", 1, 0.50, null, "Antojitos", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Papas Fritas", 1, 1.50, null, "Antojitos", null, "descripcion"));
+            lista.AgregarProducto(new Producto("Pastelito de Carne", 1, 0.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__37_, "Masa frita rellena de carne guisada con especias tradicionales"));
+            lista.AgregarProducto(new Producto("Pupusas de Frijol con Queso", 1, 0.75, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__36_, "Tortilla de maíz rellena de frijoles refritos y queso fundido"));
+            lista.AgregarProducto(new Producto("Nuegados de Yuca", 1, 0.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__35_, "Bolitas de masa de yuca bañadas en miel de panela"));
+            lista.AgregarProducto(new Producto("Tamales de Pollo", 1, 0.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__34_, "Masa de maíz suave rellena de pollo, envuelta en hoja de plátano"));
+            lista.AgregarProducto(new Producto("Empanadas de Frijol", 1, 0.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__33_, "Masa de plátano maduro rellena de frijoles y leche"));
+            lista.AgregarProducto(new Producto("Yuca Frita", 1, 0.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__32_, "Trozos de yuca crujiente por fuera y suave por dentro"));
+            lista.AgregarProducto(new Producto("Elote Loco", 1, 1.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__40_, "elote loco con mayonesa, mostaza, salsa ketchup y queso rallado"));
+            lista.AgregarProducto(new Producto("Tamales de Elote", 1, 0.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__39_, "Masa dulce de maíz tierno cocida al vapor"));
+            lista.AgregarProducto(new Producto("Papas Fritas", 1, 1.50, null, "Antojitos", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__38_, "Porción de papas clásicas cortadas y fritas al punto de sal"));
             CrearBotonProducto(lista, tabProductos.TabPages[2],"Antojitos");
-            lista.AgregarProducto(new Producto("Leche Deslactosada", 1, 1.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Extra Crema Batida", 1, 1.00, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Galletas Oreo", 1, 0.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Cafe en Grano", 1, 2.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Leche de Almendra", 1, 1.50, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Papas Pringles", 1, 1.00, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Nutella", 1, 1.00, null, "Mas", null, "descripcion"));
-            lista.AgregarProducto(new Producto("Ensalada", 1, 2.00, null, "Mas", null, "descripcion"));
+            lista.AgregarProducto(new Producto("Leche Deslactosada", 1, 1.50, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__48_, "Opción de leche ligera para personas con intolerancia a la lactosa"));
+            lista.AgregarProducto(new Producto("Extra Crema Batida", 1, 1.00, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__46_, "Porción adicional de crema chantilly para tus bebidas"));
+            lista.AgregarProducto(new Producto("Galletas Oreo", 1, 0.50, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__44_, "Famosas galletas de chocolate rellenas de crema de vainilla"));
+            lista.AgregarProducto(new Producto("Cafe en Grano", 1, 2.50, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__42_, "Bolsa de granos tostados para disfrutar de un aroma fresco en casa"));
+            lista.AgregarProducto(new Producto("Leche de Almendra", 1, 1.50, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__41_, "Alternativa vegetal cremosa y con un toque a frutos secos"));
+            lista.AgregarProducto(new Producto("Papas Pringles", 1, 1.00, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__47_, "Snack de papas crujientes en su presentación clásica de tubo"));
+            lista.AgregarProducto(new Producto("Nutella", 1, 1.00, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__49_, "Crema untable de cacao y avellanas para acompañar tus postres"));
+            lista.AgregarProducto(new Producto("Ensalada", 1, 2.00, null, "Mas", Properties.Resources.Documento_A4_Catálogo_Supermercado_Moderno_Blanco__50_, "descripcion"));
             CrearBotonProducto(lista, tabProductos.TabPages[3],"Mas");
 
             tabProductos.DrawMode = TabDrawMode.OwnerDrawFixed;

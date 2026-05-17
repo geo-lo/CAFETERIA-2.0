@@ -15,6 +15,17 @@ namespace Proyecto_PED_CAFETERIA.Forms
         public Proveedores()
         {
             InitializeComponent();
+            Diseño();
         }
+
+        private void Diseño()
+        {
+            // FORM
+            this.BackColor = Color.White;
+            this.Size = new Size(1200, 700);
+
+        }
+
     }
+
 }
