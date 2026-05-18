@@ -44,11 +44,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             label1.BackColor = Color.Transparent;
             label1.AutoSize = true;
 
-            // LABEL CANTIDAD
-            label2.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(92, 64, 51);
-            label2.BackColor = Color.Transparent;
-            label2.Text = "Pedidos listos: 0";
+           
 
             // DATAGRIDVIEW
             dgvPreparados.BackgroundColor = Color.White;
@@ -81,28 +77,9 @@ namespace Proyecto_PED_CAFETERIA.Forms
             dgvPreparados.GridColor = Color.FromArgb(230, 220, 210);
             dgvPreparados.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
 
-            // BOTON ENTREGAR
-            button1.Text = "ENTREGAR";
-            button1.BackColor = Color.FromArgb(120, 150, 90);
-            button1.ForeColor = Color.White;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-            button1.Cursor = Cursors.Hand;
-            button1.Size = new Size(130, 45);
+         
 
 
-
-            // EFECTOS
-            button1.MouseEnter += (s, e) =>
-            {
-                button1.BackColor = Color.FromArgb(100, 130, 75);
-            };
-
-            button1.MouseLeave += (s, e) =>
-            {
-                button1.BackColor = Color.FromArgb(120, 150, 90);
-            };
 
 
         }
@@ -143,7 +120,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
                 contador++;
             }
 
-            label2.Text = "Pedidos listos: " + contador;
         }
 
     }
