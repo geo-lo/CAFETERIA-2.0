@@ -138,7 +138,7 @@ namespace Proyecto_PED_CAFETERIA.Clases
                 throw new Exception("Error al editar el producto: " + ex.Message);
             }
         }
-        
+
         //Consulta para guardar el historial de pedidos en la base de datos
         public void RegistrarVenta(string nombre, int cantidad, decimal precio)
         {
@@ -172,5 +172,19 @@ namespace Proyecto_PED_CAFETERIA.Clases
             return tabla;
         }
 
+        //Consulta para descontar la cantidad vendida del producto en el inventario
+        public void DescontarProducto(int id, int cantidadVendida)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = AbrirConexion();
+            comando.CommandText = @"UPDATE Inventario 
+                                    SET CantidadActual = CantidadActual - @cantidadVendida 
+                                    WHERE IdProducto = @id";
+            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@cantidadVendida", cantidadVendida);
+            comando.ExecuteNonQuery();
+            CerrarConexion();
+
+        }
     }
 }

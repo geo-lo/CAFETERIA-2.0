@@ -1,31 +1,36 @@
-﻿namespace Proyecto_PED_CAFETERIA
+﻿namespace Proyecto_PED_CAFETERIA.Forms
 {
     partial class frmLogin
     {
-        /// <summary>
-        /// Variable del diseñador necesaria.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Limpiar los recursos que se estén usando.
-        /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        private System.Windows.Forms.Panel panelPrincipal;
+        private System.Windows.Forms.Panel panelIzquierdo;
+        private System.Windows.Forms.Panel panelDerecho;
+        private System.Windows.Forms.Label lblIcono;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblFrase;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblSubtitulo;
+        private System.Windows.Forms.Panel lineaDecorativa;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblContrasena;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblError;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
-
-        /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
-        /// </summary>
         private void InitializeComponent()
         {
             this.panelLogin = new System.Windows.Forms.Panel();
@@ -177,6 +182,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -208,4 +214,3 @@
         private System.Windows.Forms.Label lblCredenciales;
     }
 }
-

@@ -149,6 +149,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
             {
                 Producto p = actual.ProductoGuardado;
                 repo.RegistrarVenta(p.NombreProducto, p.Cantidad, (decimal)p.Precio);
+                repo.DescontarProducto(p.Id, p.Cantidad);
                 actual = actual.siguiente;
             }
 
@@ -160,6 +161,8 @@ namespace Proyecto_PED_CAFETERIA.Forms
             MostrarPedidos();
 
             MessageBox.Show("Pedido procesado y guardado correctamente", "Éxito");
+
+       
 
         }
 
