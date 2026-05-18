@@ -67,7 +67,7 @@ namespace Proyecto_PED_CAFETERIA
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
+            ValidarAdministrador();
         }
         private void ValidarAdministrador()
         {
@@ -89,15 +89,7 @@ namespace Proyecto_PED_CAFETERIA
                 txtContrasena.Focus();
             }
         }
-        private void txtContrasena_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
-
-        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
+       
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
