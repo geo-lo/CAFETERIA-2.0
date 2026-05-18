@@ -1,4 +1,5 @@
 ﻿using Proyecto_PED_CAFETERIA.Clases;
+using Proyecto_PED_CAFETERIA.Forms;
 using System;
 using System.Data.SqlClient;
 using System.Collections.Generic;
@@ -22,53 +23,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            ValidarAdministrador();
-        }
-
-        private void txtContrasena_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                ValidarAdministrador();
-                e.SuppressKeyPress = true;
-            }
-            // 1. AMPLIAR EL FORMULARIO (Fundamental para que quepa el logo a la derecha)
-            this.Size = new Size(720, 420);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.FromArgb(250, 244, 236);
-            this.FormBorderStyle = FormBorderStyle.None;
-
-            // 2. AJUSTAR EL LOGO (PictureBox) PARA QUE NO TAPE NADA
-            // Lo movemos bien a la derecha y un poco hacia arriba
-            if (pictureBox1 != null)
-            {
-                pictureBox1.Size = new Size(240, 240); // Tamaño moderado
-                                                       // Posición X: 420 (lejos de los campos de texto), Posición Y: 40
-                pictureBox1.Location = new Point(420, 40);
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                pictureBox1.BackColor = Color.Transparent;
-            }
-
-            // 3. POSICIÓN DE LOS BOTONES (En la parte inferior)
-            int botonesY = 320; // Bajamos los botones para que el logo no los alcance
-
-            // button2 (SALIR) y button3 (REGRESAR) con tus nombres originales
-            button2.Location = new Point(190, botonesY);
-            button3.Location = new Point(330, botonesY);
-
-            // Si tienes el botón de ENTRAR (ejemplo button1)
-            if (button1 != null)
-            {
-                button1.Location = new Point(50, botonesY);
-                DiseñarBotonLogin(button1, Color.FromArgb(107, 142, 85), "ENTRAR");
-            }
-
-            // 4. APLICAR ESTILOS RESTANTES
-            DiseñarBotonLogin(button2, Color.FromArgb(170, 68, 68), "SALIR");
-            DiseñarBotonLogin(button3, Color.FromArgb(120, 72, 40), "REGRESAR");
-
-            // Redondear el formulario
-            RedondearControl(this, 40);
+          
         }
         private void EstiloLabel(Label lbl)
         {
@@ -131,6 +86,55 @@ namespace Proyecto_PED_CAFETERIA.Forms
                 lblError.Text = "Usuario o contraseña incorrectos.";
                 txtContrasena.Clear();
                 txtContrasena.Focus();
+            }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            ValidarAdministrador();
+        }
+        private void ValidarAdministrador()
+        {
+            string usuario = txtUsuario.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
+
+            if (usuario == "admin" && contrasena == "1234")
+            {
+                SesionActual.Usuario = "Administrador";
+                SesionActual.Rol = "admin";
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                lblError.Text = "Usuario o contraseña incorrectos.";
+                txtContrasena.Clear();
+                txtContrasena.Focus();
+            }
+        }
+       
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtUsuario_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContrasena.Focus();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txtContrasena_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarAdministrador();
+                e.SuppressKeyPress = true;
             }
         }
     }

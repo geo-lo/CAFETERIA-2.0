@@ -236,50 +236,6 @@ namespace Proyecto_PED_CAFETERIA.Forms
         private void tabPage1_Click_1(object sender, EventArgs e) { }
         private void label3_Click(object sender, EventArgs e) { }
 
-        // tabPage1 - Comidas
-        private void button2_Click(object sender, EventArgs e) { }
-        private void btnPastel_Click(object sender, EventArgs e) { }
-        private void button12_Click(object sender, EventArgs e) { }
-        private void button8_Click(object sender, EventArgs e) { }
-        private void button3_Click(object sender, EventArgs e) { }
-        private void button11_Click(object sender, EventArgs e) { }
-        private void button1_Click(object sender, EventArgs e) { }
-        private void button6_Click(object sender, EventArgs e) { }
-        private void btnPan_Click_1(object sender, EventArgs e) { }
-
-        // tabPage2 - Bebidas
-        private void button13_Click(object sender, EventArgs e) { }
-        private void button19_Click(object sender, EventArgs e) { }
-        private void button15_Click(object sender, EventArgs e) { }
-        private void button4_Click_1(object sender, EventArgs e) { }
-        private void button5_Click_1(object sender, EventArgs e) { }
-        private void button20_Click(object sender, EventArgs e) { }
-        private void button17_Click(object sender, EventArgs e) { }
-        private void button18_Click(object sender, EventArgs e) { }
-        private void button28_Click(object sender, EventArgs e) { }
-        private void button23_Click(object sender, EventArgs e) { }
-        private void button25_Click(object sender, EventArgs e) { }
-
-        // tabPage3 - Antojitos
-        private void button44_Click(object sender, EventArgs e) { }
-        private void button34_Click(object sender, EventArgs e) { }
-        private void button42_Click(object sender, EventArgs e) { }
-        private void button39_Click(object sender, EventArgs e) { }
-        private void button38_Click(object sender, EventArgs e) { }
-        private void button35_Click(object sender, EventArgs e) { }
-        private void button36_Click(object sender, EventArgs e) { }
-        private void button31_Click(object sender, EventArgs e) { }
-        private void button30_Click(object sender, EventArgs e) { }
-
-        // tabPage4 - Mas
-        private void button60_Click(object sender, EventArgs e) { }
-        private void button59_Click(object sender, EventArgs e) { }
-        private void button58_Click(object sender, EventArgs e) { }
-        private void button56_Click(object sender, EventArgs e) { }
-        private void button55_Click(object sender, EventArgs e) { }
-        private void button54_Click(object sender, EventArgs e) { }
-        private void button53_Click(object sender, EventArgs e) { }
-        private void button49_Click(object sender, EventArgs e) { }
-        private void button45_Click(object sender, EventArgs e) { }
+        
     }
 }

@@ -49,12 +49,10 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
             btnPreparar.Location = new Point(inicioX, puntoY);
             btnBorrar.Location = new Point(inicioX + 145, puntoY); // Separación de 15px (130 ancho + 15)
-            btnEdit.Location = new Point(inicioX + 290, puntoY);   // Separación de 15px
 
             // Aplicar colores de la imagen
             DiseñarBoton(btnPreparar, Color.FromArgb(107, 142, 85)); // Verde Procesar
             DiseñarBoton(btnBorrar, Color.FromArgb(170, 68, 68));   // Rojo Salir
-            DiseñarBoton(btnEdit, Color.FromArgb(92, 64, 51));     // Café Dulce Aroma
 
             ConfigurarGridHistorial();
             // CargarHistorial();
@@ -217,8 +215,8 @@ namespace Proyecto_PED_CAFETERIA.Forms
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
-            if (dgvHistorial.SelectedRows.Count == 0) return;
-            // Aquí puedes abrir tu formulario de edición
+          
         }
+     
     }
 }

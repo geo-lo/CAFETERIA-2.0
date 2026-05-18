@@ -198,8 +198,7 @@ namespace Proyecto_PED_CAFETERIA.Forms
         }
 
         private void FrmVistaUsuario_Load(object sender, EventArgs e)
-        {
-            // Al iniciar el sistema siempre entra como usuario normal
+        {   // Al iniciar el sistema siempre entra como usuario normal
             SesionActual.Usuario = null;
             SesionActual.Rol = "usuario";
 
@@ -216,6 +215,57 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
             timer1.Interval = 80;
             timer1.Start();
+        }
+        private void AplicarModoUsuario()
+        {
+            // Opciones permitidas para usuario normal
+            button1.Enabled = true;    // Inicio / Productos
+            button2.Enabled = true;    // Pedidos
+            btnPerfil.Enabled = true;  // Perfil / Login administrador
+            btnSalir.Enabled = true;   // Salir
+
+            // Opciones administrativas bloqueadas
+            button3.Enabled = false;   // Preparar
+            button4.Enabled = false;   // Historial
+            button5.Enabled = false;   // Inventario
+            button8.Enabled = false;   // Proveedores
+
+            // Colores de opciones permitidas
+            button1.ForeColor = Color.White;
+            button2.ForeColor = Color.White;
+            btnPerfil.ForeColor = Color.White;
+            btnSalir.ForeColor = Color.White;
+
+            // Colores de opciones bloqueadas
+            button3.ForeColor = Color.LightGray;
+            button4.ForeColor = Color.LightGray;
+            button5.ForeColor = Color.LightGray;
+            button8.ForeColor = Color.LightGray;
+
+            btnPerfil.Text = "Perfil";
+        }
+        private void AplicarModoAdministrador()
+        {
+            // Administrador puede usar todo
+            button1.Enabled = true;   // Inicio / Productos
+            button2.Enabled = true;   // Pedidos
+            button3.Enabled = true;   // Preparar
+            button4.Enabled = true;   // Historial
+            button5.Enabled = true;   // Inventario
+            button8.Enabled = true;   // Proveedores
+            btnPerfil.Enabled = true;
+            btnSalir.Enabled = true;
+
+            button1.ForeColor = Color.White;
+            button2.ForeColor = Color.White;
+            button3.ForeColor = Color.White;
+            button4.ForeColor = Color.White;
+            button5.ForeColor = Color.White;
+            button8.ForeColor = Color.White;
+            btnPerfil.ForeColor = Color.White;
+            btnSalir.ForeColor = Color.White;
+
+            btnPerfil.Text = "Administrador";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -284,6 +334,11 @@ namespace Proyecto_PED_CAFETERIA.Forms
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
