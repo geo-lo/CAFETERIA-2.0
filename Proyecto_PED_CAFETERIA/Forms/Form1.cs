@@ -1,15 +1,9 @@
-﻿using Proyecto_PED_CAFETERIA.Forms;
+﻿using Proyecto_PED_CAFETERIA.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Proyecto_PED_CAFETERIA
+namespace Proyecto_PED_CAFETERIA.Forms
 {
     public partial class frmLogin : Form
     {
@@ -18,21 +12,53 @@ namespace Proyecto_PED_CAFETERIA
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-
+            ValidarAdministrador();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void txtContrasena_KeyDown(object sender, KeyEventArgs e)
         {
-            Application.Exit();
+            if (e.KeyCode == Keys.Enter)
+            {
+                ValidarAdministrador();
+                e.SuppressKeyPress = true;
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            FrmVistaUsuario regresar = new FrmVistaUsuario();
-            this.Hide();
-            regresar.Show();
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContrasena.Focus();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ValidarAdministrador()
+        {
+            string usuario = txtUsuario.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
+
+            if (usuario == "admin" && contrasena == "1234")
+            {
+                SesionActual.Usuario = "Administrador";
+                SesionActual.Rol = "admin";
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                lblError.Text = "Usuario o contraseña incorrectos.";
+                txtContrasena.Clear();
+                txtContrasena.Focus();
+            }
         }
     }
 }
