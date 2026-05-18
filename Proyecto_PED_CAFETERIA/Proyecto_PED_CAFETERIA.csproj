@@ -73,6 +73,7 @@
     <Compile Include="Clases\Nodo_ListaProductos.cs" />
     <Compile Include="Clases\Pedido.cs" />
     <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\SesionActual.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

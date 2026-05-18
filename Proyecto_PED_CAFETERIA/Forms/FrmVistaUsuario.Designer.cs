@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelFill = new System.Windows.Forms.Panel();
-            this.Bienvenida = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
@@ -44,10 +39,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelFill = new System.Windows.Forms.Panel();
+            this.Bienvenida = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLateral
@@ -68,60 +68,6 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(152, 479);
             this.panelLateral.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(-4, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "_____________";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelFill
-            // 
-            this.panelFill.BackColor = System.Drawing.Color.PeachPuff;
-            this.panelFill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelFill.Controls.Add(this.Bienvenida);
-            this.panelFill.Controls.Add(this.pictureBox2);
-            this.panelFill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFill.Location = new System.Drawing.Point(152, 0);
-            this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(737, 479);
-            this.panelFill.TabIndex = 2;
-            this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
-            // 
-            // Bienvenida
-            // 
-            this.Bienvenida.BackColor = System.Drawing.Color.Transparent;
-            this.Bienvenida.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bienvenida.ForeColor = System.Drawing.Color.Sienna;
-            this.Bienvenida.Location = new System.Drawing.Point(31, 337);
-            this.Bienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Bienvenida.Name = "Bienvenida";
-            this.Bienvenida.Size = new System.Drawing.Size(446, 52);
-            this.Bienvenida.TabIndex = 7;
-            this.Bienvenida.Text = "\"\"";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::Proyecto_PED_CAFETERIA.Properties.Resources.ESRTA_ES_LA_BUENA_1;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.dylce_aroma_cafe_iniciooo1;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(736, 479);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -278,6 +224,61 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(-4, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "_____________";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelFill
+            // 
+            this.panelFill.BackColor = System.Drawing.Color.PeachPuff;
+            this.panelFill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelFill.Controls.Add(this.Bienvenida);
+            this.panelFill.Controls.Add(this.pictureBox2);
+            this.panelFill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFill.Location = new System.Drawing.Point(152, 0);
+            this.panelFill.Name = "panelFill";
+            this.panelFill.Size = new System.Drawing.Size(737, 479);
+            this.panelFill.TabIndex = 2;
+            this.panelFill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFill_Paint);
+            // 
+            // Bienvenida
+            // 
+            this.Bienvenida.BackColor = System.Drawing.Color.Transparent;
+            this.Bienvenida.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bienvenida.ForeColor = System.Drawing.Color.Sienna;
+            this.Bienvenida.Location = new System.Drawing.Point(31, 337);
+            this.Bienvenida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Bienvenida.Name = "Bienvenida";
+            this.Bienvenida.Size = new System.Drawing.Size(446, 52);
+            this.Bienvenida.TabIndex = 7;
+            this.Bienvenida.Text = "\"\"";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Proyecto_PED_CAFETERIA.Properties.Resources.ESRTA_ES_LA_BUENA_1;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = global::Proyecto_PED_CAFETERIA.Properties.Resources.dylce_aroma_cafe_iniciooo1;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(736, 479);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // FrmVistaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,9 +293,9 @@
             this.Load += new System.EventHandler(this.FrmVistaUsuario_Load);
             this.panelLateral.ResumeLayout(false);
             this.panelLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

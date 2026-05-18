@@ -69,21 +69,56 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
+            if (SesionActual.Rol == "admin")
+            {
+                DialogResult cerrarSesion = MessageBox.Show(
+                    "Ya se encuentra en modo administrador.\n¿Desea cerrar sesión de administrador?",
+                    "Administrador",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (cerrarSesion == DialogResult.Yes)
+                {
+                    SesionActual.Usuario = null;
+                    SesionActual.Rol = null;
+
+                    AplicarModoUsuario();
+
+                    MessageBox.Show(
+                        "Sesión de administrador cerrada. El sistema volvió al modo usuario.",
+                        "Sesión cerrada",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+
+                return;
+            }
+
             DialogResult admin = MessageBox.Show(
-             "Desea entrar al MODO ADMINISTRADOR?",
-              "Confirmacion",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question
-             );
+                "¿Desea entrar al modo administrador?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
 
             if (admin == DialogResult.Yes)
             {
-                this.Hide();
-
                 frmLogin login = new frmLogin();
                 login.ShowDialog();
 
-                this.Show();
+                if (SesionActual.Rol == "admin")
+                {
+                    AplicarModoAdministrador();
+
+                    MessageBox.Show(
+                        "Modo administrador activado.",
+                        "Acceso correcto",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
             }
         }
 
@@ -99,7 +134,12 @@ namespace Proyecto_PED_CAFETERIA.Forms
         }
 
         private void FrmVistaUsuario_Load(object sender, EventArgs e)
-        {
+        {   // Al iniciar el sistema siempre entra como usuario normal
+            SesionActual.Usuario = null;
+            SesionActual.Rol = "usuario";
+
+            AplicarModoUsuario();
+
             Bienvenida.Text = "";
             Bienvenida.BackColor = Color.Transparent;
             Bienvenida.ForeColor = Color.Sienna;
@@ -111,6 +151,57 @@ namespace Proyecto_PED_CAFETERIA.Forms
 
             timer1.Interval = 80;
             timer1.Start();
+        }
+        private void AplicarModoUsuario()
+        {
+            // Opciones permitidas para usuario normal
+            button1.Enabled = true;    // Inicio / Productos
+            button2.Enabled = true;    // Pedidos
+            btnPerfil.Enabled = true;  // Perfil / Login administrador
+            btnSalir.Enabled = true;   // Salir
+
+            // Opciones administrativas bloqueadas
+            button3.Enabled = false;   // Preparar
+            button4.Enabled = false;   // Historial
+            button5.Enabled = false;   // Inventario
+            button8.Enabled = false;   // Proveedores
+
+            // Colores de opciones permitidas
+            button1.ForeColor = Color.White;
+            button2.ForeColor = Color.White;
+            btnPerfil.ForeColor = Color.White;
+            btnSalir.ForeColor = Color.White;
+
+            // Colores de opciones bloqueadas
+            button3.ForeColor = Color.LightGray;
+            button4.ForeColor = Color.LightGray;
+            button5.ForeColor = Color.LightGray;
+            button8.ForeColor = Color.LightGray;
+
+            btnPerfil.Text = "Perfil";
+        }
+        private void AplicarModoAdministrador()
+        {
+            // Administrador puede usar todo
+            button1.Enabled = true;   // Inicio / Productos
+            button2.Enabled = true;   // Pedidos
+            button3.Enabled = true;   // Preparar
+            button4.Enabled = true;   // Historial
+            button5.Enabled = true;   // Inventario
+            button8.Enabled = true;   // Proveedores
+            btnPerfil.Enabled = true;
+            btnSalir.Enabled = true;
+
+            button1.ForeColor = Color.White;
+            button2.ForeColor = Color.White;
+            button3.ForeColor = Color.White;
+            button4.ForeColor = Color.White;
+            button5.ForeColor = Color.White;
+            button8.ForeColor = Color.White;
+            btnPerfil.ForeColor = Color.White;
+            btnSalir.ForeColor = Color.White;
+
+            btnPerfil.Text = "Administrador";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -197,6 +288,11 @@ namespace Proyecto_PED_CAFETERIA.Forms
         private void button8_Click(object sender, EventArgs e)
         {
             AbrirForms(new Proveedores());
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
